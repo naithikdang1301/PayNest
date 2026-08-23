@@ -19,5 +19,5 @@ function goToAbout() {
 }
 
 function goToHome() {
-    window.location.href = "index1.html";
+    window.location.href = "home.html";
 }
