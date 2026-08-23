@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayNest | Login</title>
+
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="login-box">
+
+    <img src="../images/logo.png" class="logo" alt="logo">
+
+    <h1>Welcome Back</h1>
+    <p class="subtitle">Login to continue managing your expenses.</p>
+
+    <form>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email">
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password">
+
+        <label>CAPTCHA</label>
+
+        <div class="captcha-box">
+
+            <div class="captcha">A7K9XQ</div>
+            <button type="button" class="refresh">↻</button>
+            
+        </div>
+
+        <input type="text"
+        placeholder="Enter CAPTCHA">
+
+        <div class="options">
+
+            <label class="remember">
+                <input type="checkbox">
+                Remember Me
+            </label>
+
+            <a href="#">Forgot Password?</a>
+
+        </div>
+
+        <button type="submit" class="login-btn" onclick="goToHome()">
+            Login →
+            </button>
+    </form>
+
+    <p class="signup">
+        Don't have an account?
+        <a href="signup.html">Sign Up</a>
+    </p>
+
+</div>
+<script src="../javascript/script.js"></script>
+</body>
+</html>

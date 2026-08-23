@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayNest - Smart Spend. Bright Future.</title>
+  <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+
+  <div class="bg-overlay"></div>
+
+  <header class="navbar">
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <strong><span>Pay</span><span style="color: #f5b700;">Nest</span></strong>
+        <small>Smart Spend. Bright Future.</small>
+      </div>
+    </div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
+
+    <div class="nav-menu">
+      <nav class="nav-links">
+        <a href="index1.html" class="active">🏠 Home</a>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="expenses.html">💸 Expenses</a>
+        <a href="budget.html">🎯 Budget</a>
+        <a href="savings.html">🌱 Savings</a>
+        <a href="about.html">💬 About Us</a>
+        <a href="contact.html">🤖 Contact Us</a>
+      </nav>
+
+      
+    <div class="nav-buttons">
+
+    <button class="btn-theme">🌙</button>
+
+    <button class="btn-profile" onclick="goToProfile()">
+        👤 Profile
+    </button>
+
+    <button class="btn-outline" onclick="goToLogin()">
+        Log In
+    </button>
+
+    <button class="btn-yellow" onclick="goToSignup()">
+        Sign Up
+    </button>
+
+</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="tag">★ #1 Expense Tracker for Students</div>
+      
+      <h1>Your Money.<br>Your <span class="highlight">Future.</span></h1>
+      
+      <p class="subtitle">
+        PayNest helps students manage pocket money, track expenses, set savings goals, and learn investing basics — all in one place. No more guessing where your money went.
+      </p>
+
+      <div class="hero-btns">
+        <button class="btn-yellow" onclick="goToDashboard()">
+        Get Started Free &rarr;
+        </button>
+
+
+        <button class="btn-outline" onclick="goToAbout()">
+        Learn About PayNest &#9654;
+        </button>
+  
+      </div>
+
+      <div class="rating-box">
+        <div class="avatars">👤👤👤👤</div>
+        <div class="rating-text">
+          <p>Trusted by 500+ students</p>
+          <span class="stars">★★★★★</span> <strong>4.9/5</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img src="../images/phone.png" alt="Phone App Overview" class="phone">
+    </div>
+  </section>
+
+  <section class="feature-row">
+    <div class="f-card">📊 <div><strong>Track Expenses</strong><br><small>In real-time</small></div></div>
+    <div class="f-card">👛 <div><strong>Set Budgets</strong><br><small>And achieve goals</small></div></div>
+    <div class="f-card">📈 <div><strong>Analyze Habits</strong><br><small>With smart charts</small></div></div>
+    <div class="f-card">🐖 <div><strong>Save More</strong><br><small>For your dreams</small></div></div>
+  </section>
+
+
+  <section class="stats-row">
+    <div class="s-box">👥 <div><h2>1000+</h2><small>Expenses Tracked</small></div></div>
+    <div class="s-box">🎓 <div><h2 class="yellow-text">500+</h2><small>Happy Students</small></div></div>
+    <div class="s-box">🌐 <div><h2>15+</h2><small>Currencies Supported</small></div></div>
+    <div class="s-box">🛡️ <div><h2>99%</h2><small>User Satisfaction</small></div></div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-badge">⚡ Everything You Need</div>
+    <h2 class="section-title">Smart Finance Tools for <span class="highlight">Smart Students</span></h2>
+    <p class="section-subtitle">Six powerful modules, one unified experience</p>
+
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-icon icon-blue">📊</div>
+        <h3>Live Dashboard</h3>
+        <p>Real-time overview of your budget, spending, income, and savings. Animated charts give you a crystal-clear financial picture at a glance.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-red">💸</div>
+        <h3>Expense Tracker</h3>
+        <p>Log and categorize every rupee — food, travel, books, entertainment, stationery. Filter, sort, and search your transaction history instantly.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-purple">🎯</div>
+        <h3>Smart Budget</h3>
+        <p>Set monthly budgets per category. Visual progress bars warn you before you overspend. Your money, your rules.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-green">🌱</div>
+        <h3>Savings Goals</h3>
+        <p>Set targets for a laptop, fee, or trip. Track progress, add to your savings, and celebrate when you hit your goal!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="section-badge">⚡ Simple 3-Step Process</div>
+    <h2 class="section-title">Get Started in <span class="highlight">Minutes</span></h2>
+
+    <div class="grid-3">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Set Your Budget</h3>
+        <p>Enter your monthly allowance, scholarship, or income. Allocate limits across categories.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Track Expenses</h3>
+        <p>Log daily expenses in seconds. The app auto-calculates your remaining balance and alerts you.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Grow Your Savings</h3>
+        <p>Set goals and watch progress. Learn investing basics to make your savings work harder.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Ready to Master <span class="highlight">Your Finances?</span></h2>
+    <p>Join thousands of students building smart money habits today. Free, private, and works 100% in your browser.</p>
+
+    <div class="cta-btns">
+      <button class="btn-yellow" onclick="goToDashboard()">
+        🚀 Launch Dashboard
+    </button>
+    <button class="btn-outline" onclick="goToAbout()">
+        💬 About PayNest
+    </button>
+    </div>
+  </section>
+
+
+<footer class="footer">
+
+    <div class="footer-brand">
+
+        <div class="footer-logo"></div>
+
+        <div>
+            <h3>Pay<span>Nest</span></h3>
+            <p>Smart. Spend. Bright Future.</p>
+        </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <div>
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="expenses.html">Expenses</a>
+        </div>
+
+        <div>
+            <h4>More</h4>
+            <a href="budget.html">Budget</a>
+            <a href="savings.html">Savings</a>
+            <a href="about.html">About Us</a>
+        </div>
+
+        <div>
+            <h4>Support</h4>
+            <a href="contact.html">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        © 2026 PayNest. All rights reserved.
+    </div>
+
+</footer>
+<script src="../javascript/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayNest - My Savings</title>
+  <link rel="stylesheet" href="../css/savings.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+  <header class="navbar">
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <strong><span>Pay</span><span style="color: #f5b700;">Nest</span></strong>
+        <small>Smart Spend. Bright Future.</small>
+      </div>
+    </div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
+
+    <div class="nav-menu">
+      <nav class="nav-links">
+        <a href="index1.html">🏠 Home</a>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="expenses.html">💸 Expenses</a>
+        <a href="budget.html">🎯 Budget</a>
+        <a href="savings.html" class="active">🌱 Savings</a>
+        <a href="about.html">💬 About Us</a>
+        <a href="contact.html">🤖 Contact Us</a>
+      </nav>
+
+      
+    <div class="nav-buttons">
+
+    <button class="btn-theme">🌙</button>
+
+    <button class="btn-profile" onclick="goToProfile()">
+        👤 Profile
+    </button>
+
+    <button class="btn-outline" onclick="goToLogin()">
+        Log In
+    </button>
+
+    <button class="btn-yellow" onclick="goToSignup()">
+        Sign Up
+    </button>
+
+</div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="main-container">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="header-title">
+        <h1>My Savings</h1>
+        <p>Track your savings goals and build a better future.</p>
+      </div>
+      <button class="btn-yellow"><i class="fa-solid fa-plus"></i> New Goal</button>
+    </div>
+
+    <!-- TOP STATS CARDS -->
+    <section class="stats-row">
+      <div class="stat-card">
+        <div class="stat-icon icon-green">
+          <i class="fa-solid fa-piggy-bank"></i>
+        </div>
+        <div class="stat-content">
+          <small>Total Saved</small>
+          <h2>₹18,500</h2>
+          <span class="sub-text">Across all goals</span>
+        </div>
+        <div class="sparkline green-spark"><i class="fa-solid fa-chart-line"></i></div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon icon-blue">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <div class="stat-content">
+          <small>Total Target</small>
+          <h2>₹50,000</h2>
+          <span class="sub-text">Across all goals</span>
+        </div>
+        <div class="sparkline blue-spark"><i class="fa-solid fa-chart-line"></i></div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon icon-purple">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="stat-content">
+          <small>Total Goals</small>
+          <h2>4</h2>
+          <span class="sub-text">Active goals</span>
+        </div>
+        <div class="sparkline purple-spark"><i class="fa-solid fa-chart-line"></i></div>
+      </div>
+    </section>
+
+    <!-- SAVINGS GOALS CONTAINER -->
+    <section class="content-block">
+      <h2 class="block-title">Savings Goals</h2>
+
+      <div class="goals-list">
+
+        <!-- Goal 1 -->
+        <div class="goal-item">
+          <div class="goal-left">
+            <div class="goal-icon yellow-bg">
+              <i class="fa-solid fa-laptop"></i>
+            </div>
+            <div class="goal-info">
+              <div class="title-wrap">
+                <h3>Laptop Fund</h3>
+                <span class="tag-badge">On Track</span>
+              </div>
+              <p>For my new laptop</p>
+            </div>
+          </div>
+
+          <div class="goal-middle">
+            <div class="amount-wrap">
+              <strong>₹18,500</strong> <span class="muted-text">/ ₹50,000</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar fill-yellow" style="width: 37%;"></div>
+            </div>
+            <small class="progress-percent">37% completed</small>
+          </div>
+
+          <div class="goal-right">
+            <div class="remaining-box">
+              <strong>₹31,500</strong>
+              <small>Remaining</small>
+            </div>
+            <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+          </div>
+        </div>
+
+        <!-- Goal 2 -->
+        <div class="goal-item">
+          <div class="goal-left">
+            <div class="goal-icon blue-bg">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="goal-info">
+              <div class="title-wrap">
+                <h3>College Fees</h3>
+                <span class="tag-badge">On Track</span>
+              </div>
+              <p>Next semester fees</p>
+            </div>
+          </div>
+
+          <div class="goal-middle">
+            <div class="amount-wrap">
+              <strong>₹9,000</strong> <span class="muted-text">/ ₹15,000</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar fill-blue" style="width: 60%;"></div>
+            </div>
+            <small class="progress-percent">60% completed</small>
+          </div>
+
+          <div class="goal-right">
+            <div class="remaining-box">
+              <strong>₹6,000</strong>
+              <small>Remaining</small>
+            </div>
+            <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+          </div>
+        </div>
+
+        <!-- Goal 3 -->
+        <div class="goal-item">
+          <div class="goal-left">
+            <div class="goal-icon purple-bg">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <div class="goal-info">
+              <div class="title-wrap">
+                <h3>New Phone</h3>
+                <span class="tag-badge">On Track</span>
+              </div>
+              <p>Saving for a new phone</p>
+            </div>
+          </div>
+
+          <div class="goal-middle">
+            <div class="amount-wrap">
+              <strong>₹8,200</strong> <span class="muted-text">/ ₹25,000</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar fill-purple" style="width: 32%;"></div>
+            </div>
+            <small class="progress-percent">32% completed</small>
+          </div>
+
+          <div class="goal-right">
+            <div class="remaining-box">
+              <strong>₹16,800</strong>
+              <small>Remaining</small>
+            </div>
+            <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+          </div>
+        </div>
+
+        <!-- Goal 4 -->
+        <div class="goal-item">
+          <div class="goal-left">
+            <div class="goal-icon orange-bg">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <div class="goal-info">
+              <div class="title-wrap">
+                <h3>Trip with Friends</h3>
+                <span class="tag-badge">On Track</span>
+              </div>
+              <p>Weekend trip plan</p>
+            </div>
+          </div>
+
+          <div class="goal-middle">
+            <div class="amount-wrap">
+              <strong>₹4,500</strong> <span class="muted-text">/ ₹10,000</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar fill-orange" style="width: 45%;"></div>
+            </div>
+            <small class="progress-percent">45% completed</small>
+          </div>
+
+          <div class="goal-right">
+            <div class="remaining-box">
+              <strong>₹5,500</strong>
+              <small>Remaining</small>
+            </div>
+            <button class="more-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SMART SAVING STRATEGIES -->
+    <section class="content-block">
+      <h2 class="block-title">Smart Saving Strategies</h2>
+
+      <div class="strategies-grid">
+        <div class="strategy-card">
+          <div class="strategy-icon icon-green"><i class="fa-solid fa-wallet"></i></div>
+          <h3>Track Daily Expenses</h3>
+          <p>Track your daily spending to find areas where you can save more.</p>
+        </div>
+
+        <div class="strategy-card">
+          <div class="strategy-icon icon-blue"><i class="fa-solid fa-piggy-bank"></i></div>
+          <h3>Save First, Spend Later</h3>
+          <p>Set aside a portion of your income for savings before spending on wants.</p>
+        </div>
+
+        <div class="strategy-card">
+          <div class="strategy-icon icon-purple"><i class="fa-regular fa-calendar-check"></i></div>
+          <h3>Automate Your Savings</h3>
+          <p>Enable auto transfer to your savings goal and stay consistent.</p>
+        </div>
+
+        <div class="strategy-card">
+          <div class="strategy-icon icon-orange"><i class="fa-solid fa-percent"></i></div>
+          <h3>Avoid Impulse Spending</h3>
+          <p>Wait 24 hours before buying non-essential items. You'll save more!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+        <div class="footer-logo"></div>
+        <div>
+            <h3>Pay<span>Nest</span></h3>
+            <p>Smart. Spend. Bright Future.</p>
+        </div>
+    </div>
+    <div class="footer-links">
+        <div>
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="expenses.html">Expenses</a>
+        </div>
+        <div>
+            <h4>More</h4>
+            <a href="budget.html">Budget</a>
+            <a href="savings.html">Savings</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <a href="contact.html">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 PayNest. All rights reserved.
+    </div>
+</footer>
+<script src="../javascript/script.js"></script>
+</body>
+</html>

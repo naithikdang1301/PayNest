@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayNest | Sign Up</title>
+
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="signup-box">
+
+        <img src="../images/logo.png" alt="PayNest Logo" class="logo">
+
+        <h1>Create Account</h1>
+
+        <p class="subtitle">
+            Start managing your expenses with PayNest.
+        </p>
+
+        <form>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required>
+
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Create a password" required>
+
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm password" required>
+
+            <label>Select Currency</label>
+
+            <select>
+                <option>Select Currency</option>
+                <option>₹ Indian Rupee (INR)</option>
+                <option>$ US Dollar (USD)</option>
+                <option>€ Euro (EUR)</option>
+                <option>£ Pound (GBP)</option>
+                <option>¥ Japanese Yen (JPY)</option>
+            </select>
+
+            <label>CAPTCHA</label>
+
+            <div class="captcha-box">
+
+                <div class="captcha">
+                    P8R4MN
+                </div>
+
+                <button type="button" class="refresh">
+                    ↻
+                </button>
+
+            </div>
+
+            <input type="text" placeholder="Enter CAPTCHA" required>
+
+            <button type="submit" class="signup-btn" onclick="goToHome()">
+            Create Account →
+            </button>
+
+        </form>
+
+        <p class="login">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+
+    </div>
+<script src="../javascript/script.js"></script>
+</body>
+
+</html>

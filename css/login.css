@@ -1,0 +1,333 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+    background:url("../images/website_background.png") center/cover no-repeat;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("../images/website_background.png") center/cover no-repeat;
+    filter:blur(8px);
+    transform:scale(1.08);
+    z-index:-2;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:-1;
+}
+
+/* LOGIN BOX */
+
+.login-box{
+    width:100%;
+    max-width:400px;
+    padding:28px 35px;
+    background:rgba(25,25,25,.55);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,196,0,.35);
+    border-radius:18px;
+    color:#fff;
+    box-shadow:0 10px 35px rgba(255,196,0,.18);
+}
+
+/* LOGO + TITLE */
+
+.logo{
+    width:60px;
+    display:block;
+    margin:0 auto 10px;
+}
+
+h1{
+    text-align:center;
+    color:#FFC107;
+    font-size:32px;
+    margin-bottom:6px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#cfcfcf;
+    font-size:14px;
+    line-height:1.4;
+    margin-bottom:18px;
+}
+
+/* FORM */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+label{
+    margin-top:4px;
+    margin-bottom:2px;
+    font-size:15px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:11px 14px;
+    border:1px solid transparent;
+    outline:none;
+    border-radius:8px;
+    background:#2d2d2d;
+    color:#fff;
+    font-size:15px;
+}
+
+input:focus{
+    border-color:#FFC107;
+}
+
+/* CAPTCHA */
+
+.captcha-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:4px 0 5px;
+}
+
+.captcha{
+    flex:1;
+    padding:11px;
+    background:#FFC107;
+    color:#111;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.refresh{
+    width:42px;
+    height:42px;
+    flex-shrink:0;
+    border:0;
+    border-radius:8px;
+    background:#FFC107;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* OPTIONS */
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    margin-top:6px;
+    font-size:13px;
+}
+
+.options a{
+    color:#FFC107;
+    text-decoration:none;
+}
+
+/* LOGIN BUTTON */
+
+.login-btn{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:0;
+    border-radius:10px;
+    background:#FFC107;
+    color:#111;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:scale(1.04);
+    background:#ffcf33;
+}
+
+/* SIGNUP */
+
+.signup{
+    margin-top:15px;
+    text-align:center;
+    font-size:14px;
+}
+
+.signup a{
+    color:#FFC107;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* ================= TABLET ================= */
+
+@media(min-width:600px){
+
+    body{
+        padding:25px;
+    }
+
+    .login-box{
+        padding:28px 35px;
+    }
+}
+
+
+/* ================= DESKTOP ================= */
+
+@media(min-width:992px){
+
+    .login-box{
+        width:400px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:400px){
+
+    body{
+        padding:10px;
+    }
+
+    .login-box{
+        width:88%;
+        max-width:290px;
+        padding:17px 14px;
+        border-radius:13px;
+    }
+
+    .logo{
+        width:42px;
+        margin-bottom:5px;
+    }
+
+    h1{
+        font-size:23px;
+        margin-bottom:3px;
+    }
+
+    .subtitle{
+        font-size:10px;
+        margin-bottom:11px;
+    }
+
+    form{
+        gap:6px;
+    }
+
+    label{
+        font-size:11px;
+        margin-top:2px;
+    }
+
+    input{
+        padding:7px 9px;
+        font-size:11px;
+        border-radius:6px;
+    }
+
+    .captcha-box{
+        gap:6px;
+        margin:2px 0;
+    }
+
+    .captcha{
+        padding:7px 4px;
+        font-size:10px;
+        letter-spacing:1.5px;
+    }
+
+    .refresh{
+        width:31px;
+        height:31px;
+        font-size:13px;
+        border-radius:6px;
+    }
+
+    .options{
+        font-size:9px;
+        margin-top:3px;
+    }
+
+    .login-btn{
+        padding:8px;
+        margin-top:6px;
+        font-size:12px;
+        border-radius:7px;
+    }
+
+    .signup{
+        margin-top:8px;
+        font-size:10px;
+    }
+}
+
+
+/* ================= VERY SMALL PHONES ================= */
+
+@media(max-width:320px){
+
+    .login-box{
+        width:85%;
+        max-width:260px;
+        padding:14px 12px;
+    }
+
+    .logo{
+        width:36px;
+    }
+
+    h1{
+        font-size:20px;
+    }
+
+    .subtitle{
+        font-size:9px;
+    }
+
+    input{
+        padding:6px 8px;
+        font-size:10px;
+    }
+
+    .captcha{
+        padding:6px 3px;
+        font-size:9px;
+    }
+
+    .refresh{
+        width:28px;
+        height:28px;
+        font-size:11px;
+    }
+
+    .login-btn{
+        padding:7px;
+        font-size:11px;
+    }
+}

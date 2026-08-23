@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayNest - Profile</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="bg-overlay"></div>
+<header class="navbar">
+    <div class="logo">
+        <div class="logo-icon"></div>
+        <div class="logo-text">
+            <strong><span>Pay</span><span style="color: #f5b700;">Nest</span></strong>
+            <small>Smart Spend. Bright Future.</small>
+        </div>
+    </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
+    <div class="nav-menu">
+        <nav class="nav-links">
+            <a href="index1.html">🏠 Home</a>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="expenses.html">💸 Expenses</a>
+            <a href="budget.html">🎯 Budget</a>
+            <a href="savings.html">🌱 Savings</a>
+            <a href="about.html">💬 About Us</a>
+            <a href="contact.html">🤖 Contact Us</a>
+        </nav>
+        <div class="nav-buttons">
+            <button class="btn-theme">🌙</button>
+            <button class="btn-profile" onclick="goToProfile()">👤 Profile</button>
+            <button class="btn-outline" onclick="goToLogin()">Log In</button>
+            <button class="btn-yellow" onclick="goToSignup()">Sign Up</button>
+        </div>
+    </div>
+</header>
+<main class="container">
+    <section class="page-header">
+        <div class="page-title">
+            <div class="title-icon">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div>
+                <h1>My Profile</h1>
+                <p>Manage your PayNest account and preferences</p>
+            </div>
+        </div>
+    </section>
+    <section class="profile-card">
+        <div class="avatar-section">
+            <div class="avatar">N</div>
+            <button class="camera-btn">
+                <i class="fa-solid fa-camera"></i>
+            </button>
+        </div>
+        <div class="profile-info">
+            <div class="name-row">
+                <h2>Naithik Dang</h2>
+                <span class="student-badge">Student</span>
+            </div>
+            <div class="contact-info">
+                <p><i class="fa-regular fa-envelope"></i> naithik@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fa-solid fa-building-columns"></i> Chitkara University</p>
+                <p><i class="fa-solid fa-book-open"></i> B.Tech CSE (AI & ML)</p>
+            </div>
+        </div>
+        <div class="profile-action">
+            <button class="edit-btn">
+                <i class="fa-solid fa-pen"></i>
+                <span>Edit Profile</span>
+            </button>
+        </div>
+    </section>
+    <section class="content-card">
+        <div class="section-header">
+            <div class="section-heading">
+                <i class="fa-regular fa-user"></i>
+                <div>
+                    <h2>Personal Information</h2>
+                </div>
+            </div>
+            <button class="small-edit">
+                <i class="fa-solid fa-pen"></i>
+                Edit
+            </button>
+        </div>
+        <div class="personal-grid">
+            <div class="field">
+                <label><i class="fa-regular fa-user"></i> Full Name</label>
+                <div class="input-box">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Naithik Dang</span>
+                </div>
+            </div>
+            <div class="field">
+                <label><i class="fa-regular fa-envelope"></i> Email Address</label>
+                <div class="input-box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>naithik@gmail.com</span>
+                </div>
+            </div>
+            <div class="field">
+                <label><i class="fa-solid fa-phone"></i> Phone Number</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+            <div class="field">
+                <label><i class="fa-solid fa-building-columns"></i> College / University</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>Chitkara University</span>
+                </div>
+            </div>
+            <div class="field">
+                <label><i class="fa-solid fa-book-open"></i> Course</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>B.Tech CSE (AI & ML)</span>
+                </div>
+            </div>
+            <div class="field">
+                <label><i class="fa-regular fa-id-card"></i> Student ID</label>
+                <div class="input-box">
+                    <i class="fa-regular fa-id-card"></i>
+                    <span>24BCS12345</span>
+                </div>
+            </div>
+            <div class="field">
+                <label><i class="fa-solid fa-indian-rupee-sign"></i> Currency</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <span>INR (₹)</span>
+                </div>
+            </div>
+            <div class="field">
+                <label><i class="fa-regular fa-calendar"></i> Member Since</label>
+                <div class="input-box">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>May 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-card">
+        <div class="section-header">
+            <div class="section-heading">
+                <i class="fa-solid fa-gear"></i>
+                <h2>Preferences</h2>
+            </div>
+        </div>
+        <div class="preferences-grid">
+            <div class="preference">
+                <label>Currency</label>
+                <div class="select-box">
+                    <select class="preference-select">
+                        <option value="INR">₹ INR</option>
+                        <option value="USD">$ USD</option>
+                        <option value="EUR">€ EUR</option>
+                        <option value="GBP">£ GBP</option>
+                        <option value="JPY">¥ JPY</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <small>Choose your default currency</small>
+            </div>
+            <div class="preference">
+                <label>Theme</label>
+                <div class="select-box">
+                    <select class="preference-select">
+                        <option value="light">☀ Light</option>
+                        <option value="dark">🌙 Dark</option>
+                        <option value="system">⚙ System</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <small>Choose your preferred theme</small>
+            </div>
+            <div class="preference notification-preference">
+                <label>Notifications</label>
+                <div class="notification-setting">
+                    <div class="notification-icon">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <small>Receive important updates and alerts</small>
+            </div>
+        </div>
+        <div class="save-row">
+            <button class="save-btn">
+                <i class="fa-regular fa-floppy-disk"></i>
+                Save Changes
+            </button>
+        </div>
+    </section>
+    <section class="content-card password-card">
+        <div class="section-header">
+            <div class="section-heading">
+                <i class="fa-solid fa-lock"></i>
+                <h2>Change Password</h2>
+            </div>
+        </div>
+        <div class="password-grid">
+            <div class="password-field">
+                <label>Current Password</label>
+                <div class="password-input">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Enter current password">
+                    <i class="fa-regular fa-eye"></i>
+                </div>
+            </div>
+            <div class="password-field">
+                <label>New Password</label>
+                <div class="password-input">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Enter new password">
+                    <i class="fa-regular fa-eye"></i>
+                </div>
+                <small>Password must be at least 6 characters</small>
+            </div>
+            <div class="password-field">
+                <label>Confirm Password</label>
+                <div class="password-input">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Confirm new password">
+                    <i class="fa-regular fa-eye"></i>
+                </div>
+            </div>
+        </div>
+        <div class="password-action">
+            <button class="update-password-btn">
+                <i class="fa-solid fa-lock"></i>
+                Update Password
+            </button>
+        </div>
+    </section>
+    <section class="content-card">
+        <div class="section-header">
+            <div class="section-heading">
+                <i class="fa-solid fa-database"></i>
+                <h2>Data Management</h2>
+            </div>
+        </div>
+        <div class="data-grid">
+            <div class="data-box export-box">
+                <div class="data-icon">
+                    <i class="fa-solid fa-download"></i>
+                </div>
+                <div class="data-info">
+                    <h3>Export Data</h3>
+                    <p>Download all your data in CSV format</p>
+                    <button class="export-btn">Export CSV</button>
+                </div>
+            </div>
+            <div class="data-box reset-box">
+                <div class="data-icon">
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+                <div class="data-info">
+                    <h3>Reset All Data</h3>
+                    <p>This will permanently delete all your expenses, budgets, savings goals and settings.</p>
+                    <button class="reset-btn">Reset Data</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="logout-card">
+        <div class="logout-info">
+            <div class="logout-icon">
+                <i class="fa-solid fa-power-off"></i>
+            </div>
+            <div>
+                <h3>Logout</h3>
+                <p>Sign out of your PayNest account</p>
+            </div>
+        </div>
+        <button class="logout-btn">Logout</button>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer-brand">
+        <div class="footer-logo"></div>
+        <div>
+            <h3>Pay<span>Nest</span></h3>
+            <p>Smart. Spend. Bright Future.</p>
+        </div>
+    </div>
+    <div class="footer-links">
+        <div>
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="expenses.html">Expenses</a>
+        </div>
+        <div>
+            <h4>More</h4>
+            <a href="budget.html">Budget</a>
+            <a href="savings.html">Savings</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <a href="contact.html">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 PayNest. All rights reserved.
+    </div>
+</footer>
+<script src="../javascript/script.js"></script>
+</body>
+</html>
