@@ -85,7 +85,7 @@ function loginUser() {
 
     alert("Login successful! Welcome to PayNest.");
 
-    window.location.href = "index.html";
+    window.location.href = "home.html";
 
     return false;
 }
