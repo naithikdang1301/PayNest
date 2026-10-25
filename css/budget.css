@@ -872,3 +872,183 @@ button:active,
     gap:30px;
   }
 }
+
+/* ====================================================
+   PayNest Budget: additions for the ORIGINAL page design
+   Existing navbar, cards, footer and responsive CSS kept.
+   ==================================================== */
+
+/* Dynamic values: retain original donut and progress styling. */
+#budgetDonut {
+  background: conic-gradient(#f5b700 0 var(--donut-progress, 0%), #29313a var(--donut-progress, 0%) 100%);
+}
+#progressFill { width: var(--value, 0%); transition: width .25s ease; }
+.summary-card h2 { overflow-wrap: anywhere; }
+#dailyAllowance { color: #f5b700; font-size: 12px; line-height: 1.6; }
+
+/* Added category controls within original budget-rule-card design. */
+.category-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.category-actions, .row-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.tiny-btn {
+  border: 1px solid #3a424d; border-radius: 7px; background: #262c35;
+  color: #fff; padding: 7px 10px; cursor: pointer; font-size: 12px;
+}
+.tiny-btn:hover { border-color: #f5b700; }
+.tiny-btn.danger { color: #ff858e; }
+.category-metrics {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px;
+  color: #a5adba; font-size: 12px; margin: 12px 0 9px;
+}
+.category-meter { height: 8px; background: #29313a; border-radius: 10px; overflow: hidden; }
+.category-meter span { display: block; height: 100%; background: #f5b700; border-radius: inherit; }
+.category-meter.over span { background: #ff4757; }
+.budget-empty, .empty-card { color: #a5adba; text-align: center; padding: 20px; line-height: 1.6; }
+.empty-card { grid-column: 1 / -1; border: 1px dashed #39414c; border-radius: 10px; }
+
+/* New expense history, styled as an original PayNest card. */
+.budget-expenses { padding: 24px; margin-bottom: 30px; }
+.budget-expense-tools { margin: 18px 0; }
+.budget-expense-tools input {
+  width: min(100%, 360px); padding: 11px 13px; border-radius: 9px;
+  border: 1px solid #3a424d; background: #191e25; color: #fff;
+  font: inherit;
+}
+.budget-table-wrap { width: 100%; overflow-x: auto; }
+.budget-expense-table { width: 100%; min-width: 580px; border-collapse: collapse; text-align: left; }
+.budget-expense-table th, .budget-expense-table td {
+  padding: 13px 10px; border-bottom: 1px solid #303641; font-size: 13px;
+}
+.budget-expense-table th { color: #a5adba; font-size: 11px; text-transform: uppercase; }
+.budget-expense-table td:nth-child(4) { font-weight: 700; }
+.budget-data-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.budget-data-actions button {
+  padding: 10px 13px; border-radius: 8px; border: 1px solid #454d59;
+  background: #262c35; color: #fff; cursor: pointer;
+}
+.budget-data-actions button:hover { border-color: #f5b700; }
+#clearBtn { color: #ff858e; }
+
+/* Native dialogs: added functionality without changing page layout. */
+.budget-dialog {
+  position: fixed; inset: 0; margin: auto; width: min(92vw, 450px);
+  max-height: 88vh; overflow-y: auto; padding: 25px;
+  background: #151a20; color: #fff; border: 1px solid #39414c;
+  border-radius: 15px; box-shadow: 0 20px 60px #000a;
+}
+.budget-dialog::backdrop { background: #000b; }
+.budget-dialog form { display: flex; flex-direction: column; gap: 10px; }
+.budget-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.budget-dialog-head h2 { font-size: 21px; }
+.budget-dialog-head button { border: 0; background: transparent; color: #ddd; font-size: 18px; cursor: pointer; }
+.budget-dialog label { display: block; margin-top: 9px; font-size: 13px; font-weight: 700; }
+.budget-dialog input, .budget-dialog select {
+  display: block; width: 100%; min-height: 42px; padding: 10px 12px;
+  border-radius: 8px; border: 1px solid #3a424d; background: #222832;
+  color: #fff; color-scheme: dark; font: inherit;
+}
+.budget-dialog p { color: #a5adba; line-height: 1.6; font-size: 13px; }
+.budget-dialog-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.budget-dialog-actions button {
+  border: 1px solid #444c56; background: #292f38; color: #fff;
+  border-radius: 8px; padding: 10px 15px; cursor: pointer;
+}
+.budget-dialog-actions button[type="submit"], #confirmYes { background: #f5b700; color: #111; border-color: #f5b700; font-weight: 700; }
+
+/* Notifications. */
+.budget-toast {
+  position: fixed; right: 20px; bottom: 20px; z-index: 3000;
+  padding: 13px 17px; border-radius: 9px; border: 1px solid #438b61;
+  background: #1e3227; color: #fff; box-shadow: 0 8px 25px #0007;
+  opacity: 0; pointer-events: none; transform: translateY(12px); transition: .2s;
+}
+.budget-toast.show { opacity: 1; transform: translateY(0); }
+.budget-toast.error { background: #51252b; border-color: #ad4655; }
+
+/* Responsive additions only; original breakpoints remain untouched. */
+@media (max-width: 600px) {
+  .budget-expenses { padding: 16px; }
+  .budget-dialog { padding: 18px; }
+  .budget-dialog-actions button { flex: 1; }
+  .budget-data-actions button { flex: 1 1 135px; }
+}
+
+/* =====================================================
+   LIGHT THEME — controlled by common.js (.light-theme)
+   Navbar intentionally stays dark in both themes.
+   ===================================================== */
+body.light-theme {
+  background: #f4f6fa;
+  color: #18212e;
+  color-scheme: light;
+}
+body.light-theme .bg-overlay { background: rgba(246,248,252,.88); }
+body.light-theme .navbar { background: #000; color: #fff; }
+body.light-theme .navbar .nav-links a { color: #aaa; }
+body.light-theme .navbar .nav-links a:hover,
+body.light-theme .navbar .nav-links a.active { color: #f5b700; background: #ffffff1a; }
+body.light-theme .navbar .logo-text,
+body.light-theme .navbar .logo-text strong { color: #fff; }
+body.light-theme .navbar .btn-theme,
+body.light-theme .navbar .btn-profile,
+body.light-theme .navbar .btn-outline,
+body.light-theme .navbar .btn-yellow { color: #fff; }
+body.light-theme .navbar .btn-theme:hover,
+body.light-theme .navbar .btn-profile:hover,
+body.light-theme .navbar .btn-outline:hover,
+body.light-theme .navbar .btn-yellow:hover { color: #000; }
+body.light-theme .heading p,
+body.light-theme .section-subtitle,
+body.light-theme .budget-tip p,
+body.light-theme .budget-rule-card p,
+body.light-theme .progress-info p { color: #596575; }
+body.light-theme .summary-card,
+body.light-theme .card { background: #fff; border-color: #dce2eb; box-shadow: 0 4px 20px #17233b0a; }
+body.light-theme .summary-card:hover { border-color: #b9c5d5; box-shadow: 0 6px 18px #17233b14; }
+body.light-theme .summary-card small,
+body.light-theme .summary-card span,
+body.light-theme .progress-info h2 small,
+body.light-theme .donut small,
+body.light-theme .section-head > span,
+body.light-theme .alert small { color: #657286; }
+body.light-theme .budget-rule-card,
+body.light-theme .budget-tip { background: #f7f9fc; border-color: #dce2eb; }
+body.light-theme .budget-rule-card:hover,
+body.light-theme .budget-tip:hover { background: #eef3fa; border-color: #c4cfdd; }
+body.light-theme .category-metrics,
+body.light-theme .budget-empty,
+body.light-theme .empty-card { color: #596575; }
+body.light-theme .empty-card { border-color: #cbd4e0; }
+body.light-theme .month,
+body.light-theme .budget-expense-tools input { background: #fff; color: #18212e; border-color: #cbd4e0; color-scheme: light; }
+body.light-theme .month option { background: #fff; color: #18212e; }
+body.light-theme .tiny-btn,
+body.light-theme .budget-data-actions button { background: #e9eef5; color: #18212e; border-color: #cbd4e0; }
+body.light-theme .tiny-btn.danger,
+body.light-theme #clearBtn { color: #bc2537; }
+body.light-theme .budget-expense-table th { color: #536174; }
+body.light-theme .budget-expense-table th,
+body.light-theme .budget-expense-table td { border-bottom-color: #e1e6ee; }
+body.light-theme .alert { border-bottom-color: #e1e6ee; }
+body.light-theme .alert i { background: #edf1f7; }
+body.light-theme .bar,
+body.light-theme .category-meter { background: #e1e7ef; }
+body.light-theme .donut:before { background: #fff; }
+body.light-theme #budgetDonut {
+  background: conic-gradient(#f5b700 0 var(--donut-progress, 0%), #dce3ec var(--donut-progress, 0%) 100%);
+}
+body.light-theme .footer { border-top-color: #d8dfe9; }
+body.light-theme .footer-links a,
+body.light-theme .footer-brand p,
+body.light-theme .footer-bottom { color: #586579; }
+body.light-theme .footer-links a:hover { color: #9d7400; }
+body.light-theme .footer-bottom { border-top-color: #d8dfe9; }
+body.light-theme .budget-dialog { background: #fff; color: #18212e; border-color: #d2dbe6; }
+body.light-theme .budget-dialog input,
+body.light-theme .budget-dialog select { background: #f8fafc; color: #18212e; border-color: #cbd4e0; color-scheme: light; }
+body.light-theme .budget-dialog p { color: #596575; }
+body.light-theme .budget-dialog-head button { color: #263449; }
+body.light-theme .budget-dialog-actions button { background: #e9eef5; color: #18212e; border-color: #cbd4e0; }
+body.light-theme .budget-dialog-actions button[type="submit"],
+body.light-theme #confirmYes { background: #f5b700; color: #111; border-color: #f5b700; }
+body.light-theme .budget-toast { background: #e5f6eb; color: #14532d; border-color: #89cda2; }
+body.light-theme .budget-toast.error { background: #fce8eb; color: #9f2333; border-color: #e8a0aa; }

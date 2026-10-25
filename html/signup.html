@@ -23,49 +23,64 @@
             Start managing your expenses with PayNest.
         </p>
 
-        <form>
+        <form onsubmit="return signupUser()">
 
             <label>Full Name</label>
-            <input type="text" placeholder="Enter your full name" required>
+            <input type="text" id="fullName"
+                   placeholder="Enter your full name" required>
 
             <label>Email Address</label>
-            <input type="email" placeholder="Enter your email" required>
+            <input type="email" id="signupEmail"
+                   placeholder="Enter your email" required>
 
             <label>Password</label>
-            <input type="password" placeholder="Create a password" required>
 
-            <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm password" required>
+<div class="password-box">
+    <input type="password" id="signupPassword"
+           placeholder="Create a password" required>
+
+    <span class="eye" onclick="togglePassword('signupPassword', this)">👁</span>
+</div>
+
+
+<label>Confirm Password</label>
+
+<div class="password-box">
+    <input type="password" id="confirmPassword"
+           placeholder="Confirm password" required>
+
+    <span class="eye" onclick="togglePassword('confirmPassword', this)">👁</span>
+</div>
 
             <label>Select Currency</label>
 
-            <select>
-                <option>Select Currency</option>
-                <option>₹ Indian Rupee (INR)</option>
-                <option>$ US Dollar (USD)</option>
-                <option>€ Euro (EUR)</option>
-                <option>£ Pound (GBP)</option>
-                <option>¥ Japanese Yen (JPY)</option>
+            <select id="currency" required>
+                <option value="">Select Currency</option>
+                <option value="INR">₹ Indian Rupee (INR)</option>
+                <option value="USD">$ US Dollar (USD)</option>
+                <option value="EUR">€ Euro (EUR)</option>
+                <option value="GBP">£ Pound (GBP)</option>
+                <option value="JPY">¥ Japanese Yen (JPY)</option>
             </select>
 
             <label>CAPTCHA</label>
 
             <div class="captcha-box">
 
-                <div class="captcha">
-                    P8R4MN
-                </div>
+                <div class="captcha" id="captchaText">P8R4MN</div>
 
-                <button type="button" class="refresh">
+                <button type="button" class="refresh"
+                        onclick="refreshSignupCaptcha()">
                     ↻
                 </button>
 
             </div>
 
-            <input type="text" placeholder="Enter CAPTCHA" required>
+            <input type="text" id="signupCaptcha"
+                   placeholder="Enter CAPTCHA" required>
 
-            <button type="submit" class="signup-btn" onclick="goToHome()">
-            Create Account →
+            <button type="submit" class="signup-btn">
+                Create Account →
             </button>
 
         </form>
@@ -76,7 +91,9 @@
         </p>
 
     </div>
-<script src="../javascript/script.js"></script>
+
+    <script src="../javascript/signup.js"></script>
+<script src="../javascript/common.js"></script>
 </body>
 
 </html>

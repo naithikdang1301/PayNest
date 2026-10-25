@@ -180,6 +180,26 @@ input:focus{
     text-decoration:none;
     font-weight:bold;
 }
+/* PASSWORD SHOW / HIDE */
+
+.password-box {
+    position: relative;
+    width: 100%;
+}
+
+.password-box input {
+    padding-right: 42px;
+}
+
+.eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 17px;
+    color: #FFC107;
+}
 
 
 /* ================= TABLET ================= */

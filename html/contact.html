@@ -38,7 +38,10 @@
         </nav>
 
         <div class="nav-buttons">
-            <button class="btn-theme">🌙</button>
+            <button class="btn-theme"
+        type="button"
+        onclick="changeTheme()"
+        title="Change Theme">🌙</button>
             <button class="btn-profile" onclick="goToProfile()">👤 Profile</button>
             <button class="btn-outline" onclick="goToLogin()">Log In</button>
             <button class="btn-yellow" onclick="goToSignup()">Sign Up</button>
@@ -148,7 +151,11 @@
 
                 <div class="form-group">
                     <label>Message *</label>
-                    <textarea placeholder="Type your message here..." required></textarea>
+                    <textarea
+    placeholder="Type your message here..."
+    minlength="10"
+    required>
+</textarea>
                 </div>
 
                 <div class="form-bottom">
@@ -170,6 +177,7 @@
                 </div>
 
             </form>
+            <p id="successMessage" role="status"></p>
         </div>
 
     </section>
@@ -252,8 +260,8 @@
     </div>
 
 </footer>
-
-<script src="../javascript/script.js"></script>
+<script src="../javascript/common.js"></script>
+<script src="../javascript/contact.js"></script>
 
 </body>
 </html>

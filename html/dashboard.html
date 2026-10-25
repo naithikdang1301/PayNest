@@ -1,382 +1,222 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayNest - Dashboard</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PayNest - Dashboard</title>
+<link href="../css/dashboard.css" rel="stylesheet"/>
 </head>
-
 <body>
-
 <div class="overlay"></div>
-
 <header class="navbar">
-
-    <div class="logo">
-        <div class="logo-icon"></div>
-        <div class="logo-text">
-            <strong><span>Pay</span><span style="color:#f5b700;">Nest</span></strong>
-            <small>Smart Spend. Bright Future.</small>
-        </div>
-    </div>
-
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger">☰</label>
-
-    <div class="nav-menu">
-
-        <nav class="nav-links">
-            <a href="home.html">🏠 Home</a>
-            <a href="dashboard.html" class="active">📊 Dashboard</a>
-            <a href="expenses.html">💸 Expenses</a>
-            <a href="budget.html">🎯 Budget</a>
-            <a href="savings.html">🌱 Savings</a>
-            <a href="about.html">💬 About Us</a>
-            <a href="contact.html">📅 Contact Us</a>
-        </nav>
-
-        <div class="nav-buttons">
-            <button class="btn-theme">🌙</button>
-            <button class="btn-profile" onclick="goToProfile()">👤 Profile</button>
-            <button class="btn-outline" onclick="goToLogin()">Log In</button>
-            <button class="btn-yellow" onclick="goToSignup()">Sign Up</button>
-        </div>
-
-    </div>
+<div class="logo">
+<div class="logo-icon"></div>
+<div class="logo-text">
+<strong><span>Pay</span><span style="color:#f5b700;">Nest</span></strong>
+<small>Smart Spend. Bright Future.</small>
+</div>
+</div>
+<input id="menu-toggle" type="checkbox"/>
+<label class="hamburger" for="menu-toggle">☰</label>
+<div class="nav-menu">
+<nav class="nav-links">
+<a href="home.html">🏠 Home</a>
+<a class="active" href="dashboard.html">📊 Dashboard</a>
+<a href="expenses.html">💸 Expenses</a>
+<a href="budget.html">🎯 Budget</a>
+<a href="savings.html">🌱 Savings</a>
+<a href="about.html">💬 About Us</a>
+<a href="contact.html">📅 Contact Us</a>
+</nav>
+<div class="nav-buttons">
+<button class="btn-theme">🌙</button>
+<button class="btn-profile" onclick="goToProfile()">👤 Profile</button>
+<button class="btn-outline" onclick="goToLogin()">Log In</button>
+<button class="btn-yellow" onclick="goToSignup()">Sign Up</button>
+</div>
+</div>
 </header>
-
-
 <main class="container">
-
-    <!-- HEADER -->
-    <section class="dashboard-head">
-        <div>
-            <h1>Good Evening, <span style="color:#f5b700">Naithik!</span>👋</h1>
-            <p>Here's your financial overview.</p>
-        </div>
-
-        <select>
-            <option>📅 May 2026</option>
-            <option>📅 June 2026</option>
-            <option>📅 July 2026</option>
-        </select>
-    </section>
-
-
-    <!-- SUMMARY -->
-    <section class="summary-grid">
-
-        <div class="summary-card">
-            <div class="icon yellow-icon">💰</div>
-            <div class="summary-content">
-                <small>Total Balance</small>
-                <h2>₹12,450.00</h2>
-                <p>All Accounts</p>
-            </div>
-            <span class="mini-chart yellow-line">〰</span>
-        </div>
-
-        <div class="summary-card">
-            <div class="icon green-icon">💳</div>
-            <div class="summary-content">
-                <small>Monthly Budget</small>
-                <h2>₹15,000.00</h2>
-                <p>This Month</p>
-            </div>
-            <span class="mini-chart green-line">〰</span>
-        </div>
-
-        <div class="summary-card">
-            <div class="icon red-icon">◔</div>
-            <div class="summary-content">
-                <small>This Month Spent</small>
-                <h2>₹9,300.00</h2>
-                <p>This Month</p>
-            </div>
-            <span class="mini-chart red-line">〰</span>
-        </div>
-
-        <div class="summary-card">
-            <div class="icon purple-icon">🐷</div>
-            <div class="summary-content">
-                <small>Savings</small>
-                <h2>₹5,760.00</h2>
-                <p>This Month</p>
-            </div>
-            <span class="mini-chart purple-line">〰</span>
-        </div>
-
-    </section>
-
-
-    <!-- BUDGET PROGRESS -->
-    <section class="card budget-progress">
-
-        <div class="section-title">
-            <h3>Budget Progress</h3>
-        </div>
-
-        <div class="progress-info">
-            <strong>₹9,300.00 <span>/ ₹15,000.00 spent</span></strong>
-            <b>62%</b>
-        </div>
-
-        <div class="progress-bar">
-            <span></span>
-        </div>
-
-        <p>₹5,700 remaining</p>
-
-    </section>
+<!-- HEADER -->
+<section class="dashboard-head">
+<div>
+<h1>Good <span id="greetingTime">Day</span>, <span id="dashboardUser" style="color:#f5b700">User</span>! 👋</h1>
+<p>Here's your financial overview.</p>
+</div>
+<select id="dashboardMonth"></select>
+</section>
+<!-- SUMMARY -->
+<section class="summary-grid">
+<div class="summary-card">
+<div class="icon yellow-icon">💰</div>
+<div class="summary-content">
+<small>Total Balance</small>
+<h2 id="totalBalance">₹0.00</h2>
+<p>All-time balance</p>
+</div>
+<span class="mini-chart yellow-line">〰</span>
+</div>
+<div class="summary-card">
+<div class="icon green-icon">💳</div>
+<div class="summary-content">
+<small>Monthly Budget</small>
+<h2 id="monthlyBudget">₹0.00</h2>
+<p>Selected month</p>
+</div>
+<span class="mini-chart green-line">〰</span>
+</div>
+<div class="summary-card">
+<div class="icon red-icon">◔</div>
+<div class="summary-content">
+<small>This Month Spent</small>
+<h2 id="monthlySpent">₹0.00</h2>
+<p>Selected month</p>
+</div>
+<span class="mini-chart red-line">〰</span>
+</div>
+<div class="summary-card">
+<div class="icon purple-icon">🐷</div>
+<div class="summary-content">
+<small>Savings</small>
+<h2 id="totalSavings">₹0.00</h2>
+<p>Saved goals total</p>
+</div>
+<span class="mini-chart purple-line">〰</span>
+</div>
+</section>
+<!-- BUDGET PROGRESS -->
+<section class="card budget-progress">
+<div class="section-title">
+<h3>Budget Progress</h3>
+</div>
+<div class="progress-info">
+<strong id="budgetAmounts">₹0.00 / ₹0.00 spent</strong>
+<b id="budgetPercent">0%</b>
+</div>
+<div class="progress-bar">
+<span id="budgetFill"></span>
+</div>
+<p id="budgetRemaining">Set a budget to start tracking.</p>
+</section>
+<!-- SAVINGS + ALERTS -->
+<section class="two-column">
+<div class="card savings">
+<div class="section-title">
+<h3>Savings Goals</h3>
+<a href="savings.html">View All Goals →</a>
+</div>
+<div id="dashboardGoals"></div>
+</div>
+<div class="card alerts">
+<div class="section-title">
+<h3>Budget Alerts</h3>
+<a href="budget.html">View All →</a>
+</div>
 
 
-    <!-- SAVINGS + ALERTS -->
-    <section class="two-column">
 
-        <div class="card savings">
-
-            <div class="section-title">
-                <h3>Savings Goals</h3>
-                <a href="savings.html">View All Goals →</a>
-            </div>
-
-            <div class="goal">
-
-                <div class="goal-icon">💻</div>
-
-                <div class="goal-info">
-                    <h3>Laptop Fund</h3>
-
-                    <strong>₹28,000 <span>/ ₹60,000</span></strong>
-
-                    <div class="goal-bar">
-                        <span></span>
-                    </div>
-
-                    <p>₹32,000 remaining</p>
-                </div>
-
-                <b class="percentage">46%</b>
-
-            </div>
-
-        </div>
+<div id="dashboardAlerts"></div></div>
+</section>
+<!-- RECENT TRANSACTIONS -->
+<section class="card transactions">
+<div class="section-title">
+<h3>Recent Transactions</h3>
+<a href="expenses.html">View All →</a>
+</div>
+<div class="transaction-head">
+<span>Description</span>
+<span>Category</span>
+<span>Date</span>
+<span class="amount-head">Amount</span>
+</div>
 
 
-        <div class="card alerts">
-
-            <div class="section-title">
-                <h3>Budget Alerts</h3>
-                <a href="budget.html">View All →</a>
-            </div>
-
-            <div class="alert warning">
-                <span>⚠</span>
-                <div>
-                    <strong>You've spent 62% of your budget.</strong>
-                    <p>Keep tracking to stay in control.</p>
-                </div>
-            </div>
-
-            <div class="alert info">
-                <span>●</span>
-                <div>
-                    <strong>Highest spending was on 20 May.</strong>
-                    <p>Total spending: ₹1,480.</p>
-                </div>
-            </div>
-
-            <div class="alert success">
-                <span>✓</span>
-                <div>
-                    <strong>You're on track!</strong>
-                    <p>Great job managing your budget.</p>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
 
 
-    <!-- RECENT TRANSACTIONS -->
-    <section class="card transactions">
 
-        <div class="section-title">
-            <h3>Recent Transactions</h3>
-            <a href="expenses.html">View All →</a>
-        </div>
-
-        <div class="transaction-head">
-            <span>Description</span>
-            <span>Category</span>
-            <span>Date</span>
-            <span class="amount-head">Amount</span>
-        </div>
-
-        <div class="transaction">
-            <div class="description">
-                <i>🍔</i>
-                <span>Food & Dining</span>
-            </div>
-            <span class="category food">Food</span>
-            <span>20 May 2026</span>
-            <strong class="amount">- ₹250.00</strong>
-        </div>
-
-        <div class="transaction">
-            <div class="description">
-                <i>🚕</i>
-                <span>Uber Ride</span>
-            </div>
-            <span class="category travel">Travel</span>
-            <span>20 May 2026</span>
-            <strong class="amount">- ₹180.00</strong>
-        </div>
-
-        <div class="transaction">
-            <div class="description">
-                <i>📚</i>
-                <span>Books</span>
-            </div>
-            <span class="category education">Education</span>
-            <span>19 May 2026</span>
-            <strong class="amount">- ₹450.00</strong>
-        </div>
-
-        <div class="transaction">
-            <div class="description">
-                <i>📱</i>
-                <span>Mobile Recharge</span>
-            </div>
-            <span class="category bills">Bills</span>
-            <span>19 May 2026</span>
-            <strong class="amount">- ₹299.00</strong>
-        </div>
-
-        <div class="transaction">
-            <div class="description">
-                <i>🎬</i>
-                <span>Movie Tickets</span>
-            </div>
-            <span class="category entertainment">Entertainment</span>
-            <span>18 May 2026</span>
-            <strong class="amount">- ₹220.00</strong>
-        </div>
-
-    </section>
-
-
-    <!-- QUICK ACTIONS -->
-    <section class="card quick-actions">
-
-        <div class="section-title">
-            <h3>Quick Actions</h3>
-        </div>
-
-        <div class="action-grid">
-
-            <div class="action">
-                <div class="action-icon yellow-icon">＋</div>
-                <div>
-                    <strong>Add Expense</strong>
-                    <p>Track your daily spending</p>
-                </div>
-                <b>›</b>
-            </div>
-
-            <div class="action">
-                <div class="action-icon green-icon">💳</div>
-                <div>
-                    <strong>Add Income</strong>
-                    <p>Add your income sources</p>
-                </div>
-                <b>›</b>
-            </div>
-
-            <div class="action">
-                <div class="action-icon purple-icon">🎯</div>
-                <div>
-                    <strong>Set Budget</strong>
-                    <p>Plan your monthly budget</p>
-                </div>
-                <b>›</b>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- TIP -->
-    <section class="tip">
-
-        <div class="tip-icon">💡</div>
-
-        <div class="tip-content">
-            <h3>Tip of the Month</h3>
-
-            <p>
+<div id="dashboardTransactions"></div></section>
+<!-- QUICK ACTIONS -->
+<section class="card quick-actions">
+<div class="section-title">
+<h3>Quick Actions</h3>
+</div>
+<div class="action-grid">
+<div class="action" id="quickAddExpense" role="button" tabindex="0">
+<div class="action-icon yellow-icon">＋</div>
+<div>
+<strong>Add Expense</strong>
+<p>Track your daily spending</p>
+</div>
+<b>›</b>
+</div>
+<div class="action" id="quickAddIncome" role="button" tabindex="0">
+<div class="action-icon green-icon">💳</div>
+<div>
+<strong>Add Income</strong>
+<p>Add your income sources</p>
+</div>
+<b>›</b>
+</div>
+<div class="action" id="quickSetBudget" role="button" tabindex="0">
+<div class="action-icon purple-icon">🎯</div>
+<div>
+<strong>Set Budget</strong>
+<p>Plan your monthly budget</p>
+</div>
+<b>›</b>
+</div>
+</div>
+</section>
+<!-- TIP -->
+<section class="tip">
+<div class="tip-icon">💡</div>
+<div class="tip-content">
+<h3>Tip of the Month</h3>
+<p>
                 Try the 50/30/20 rule: 50% for needs, 30% for wants,
                 and 20% for savings.
             </p>
-
-            <small>Small changes today, big difference tomorrow!</small>
-        </div>
-
-        <div class="tip-image">🪙 🐷 🌱</div>
-
-    </section>
-
+<small>Small changes today, big difference tomorrow!</small>
+</div>
+<div class="tip-image">🪙 🐷 🌱</div>
+</section>
 </main>
-
-
 <!-- FOOTER -->
 <footer class="footer">
-
-    <div class="footer-brand">
-        <div class="footer-logo"></div>
-
-        <div>
-            <h3>Pay<span>Nest</span></h3>
-            <p>Smart. Spend. Bright Future.</p>
-        </div>
-    </div>
-
-    <div class="footer-links">
-
-        <div>
-            <h4>Quick Links</h4>
-            <a href="home.html">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="expenses.html">Expenses</a>
-        </div>
-
-        <div>
-            <h4>More</h4>
-            <a href="budget.html">Budget</a>
-            <a href="savings.html">Savings</a>
-            <a href="about.html">About Us</a>
-        </div>
-
-        <div>
-            <h4>Support</h4>
-            <a href="contact.html">Contact Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
+<div class="footer-brand">
+<div class="footer-logo"></div>
+<div>
+<h3>Pay<span>Nest</span></h3>
+<p>Smart. Spend. Bright Future.</p>
+</div>
+</div>
+<div class="footer-links">
+<div>
+<h4>Quick Links</h4>
+<a href="home.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="expenses.html">Expenses</a>
+</div>
+<div>
+<h4>More</h4>
+<a href="budget.html">Budget</a>
+<a href="savings.html">Savings</a>
+<a href="about.html">About Us</a>
+</div>
+<div>
+<h4>Support</h4>
+<a href="contact.html">Contact Us</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms &amp; Conditions</a>
+</div>
+</div>
+<div class="footer-bottom">
         © 2026 PayNest. All rights reserved.
     </div>
-
 </footer>
+<script src="../javascript/common.js"></script>
+<script src="../javascript/dashboard.js"></script>
 
-<script src="../javascript/script.js"></script>
-
-</body>
+<div aria-hidden="true" class="income-modal" id="incomeModal"><div aria-labelledby="incomeModalTitle" aria-modal="true" class="income-dialog" role="dialog"><button aria-label="Close" class="income-close" id="closeIncomeModal" type="button">×</button><h2 id="incomeModalTitle">Add Income</h2><form id="incomeForm"><label for="incomeAmount">Amount</label><input id="incomeAmount" min="0.01" required="" step="0.01" type="number"/><label for="incomeSource">Source</label><input id="incomeSource" maxlength="80" placeholder="Salary, Freelance, etc." required="" type="text"/><label for="incomeDate">Date</label><input id="incomeDate" required="" type="date"/><div class="income-form-actions"><button id="cancelIncome" type="button">Cancel</button><button class="income-save" type="submit">Save Income</button></div></form></div></div></body>
 </html>
-

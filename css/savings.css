@@ -887,3 +887,103 @@ button:active,
     grid-template-columns:1fr 1fr;
   }
 }
+
+/* ================= SECTION HEADINGS ================= */
+
+.block-title {
+    color: #f1f0ed;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 4px solid #FFC107;
+    letter-spacing: 0.5px;
+}
+
+/* Heading ke neeche subtle line */
+
+.content-block {
+    position: relative;
+}
+
+.block-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 193, 7, 0.2);
+    margin-top: 12px;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 400px) {
+    .block-title {
+        font-size: 16px;
+        padding-left: 9px;
+        border-left-width: 3px;
+    }
+}
+
+
+/* ==========================================================
+   LIGHT THEME — controlled exclusively by common.js
+   Original dark theme and black navbar are preserved.
+   ========================================================== */
+body.light-theme {
+  color: #17212e;
+  background-color: #f4f6fa;
+}
+body.light-theme .bg-overlay { background: rgba(245, 247, 251, .88); }
+body.light-theme .navbar { background: #000; color: #fff; }
+body.light-theme .navbar .nav-links a { color: #aaa; }
+body.light-theme .navbar .nav-links a:hover,
+body.light-theme .navbar .nav-links a.active { color: #f5b700; background: #ffffff1a; }
+body.light-theme .navbar .logo-text { color: #fff; }
+body.light-theme .header-title p { color: #566476; }
+body.light-theme .stat-card,
+body.light-theme .content-block,
+body.light-theme .strategy-card {
+  background: rgba(255,255,255,.96);
+  border-color: #dbe2eb;
+  color: #17212e;
+  box-shadow: 0 4px 18px rgba(27,42,62,.06);
+}
+body.light-theme .stat-card:hover,
+body.light-theme .strategy-card:hover { border-color: #c0ccd9; }
+body.light-theme .strategy-card:hover { background: #f7f9fc; }
+body.light-theme .goal-item {
+  background: #f7f9fc;
+  border-color: #dce4ee;
+  color: #17212e;
+}
+body.light-theme .goal-item:hover { background: #edf3f9; border-color: #c6d1de; }
+body.light-theme .header-title p,
+body.light-theme .stat-content small,
+body.light-theme .sub-text,
+body.light-theme .goal-info p,
+body.light-theme .muted-text,
+body.light-theme .progress-percent,
+body.light-theme .remaining-box small,
+body.light-theme .strategy-card p,
+body.light-theme .footer-brand p,
+body.light-theme .footer-links a,
+body.light-theme .footer-bottom { color: #586779; }
+body.light-theme .block-title { color: #17212e; }
+body.light-theme .progress-bar-container { background: #dce4ee; }
+body.light-theme .more-btn { color: #506073; }
+body.light-theme .more-btn:hover { color: #b38400; }
+body.light-theme .social-links a {
+  background: #fff;
+  border-color: #dbe2eb;
+  color: #475569;
+}
+body.light-theme .social-links a:hover { background: #f5b700; color: #000; }
+body.light-theme .footer { border-top-color: #d5deea; }
+body.light-theme .footer-bottom { border-top-color: #d5deea; }
+body.light-theme .footer-brand h3,
+body.light-theme .footer-links h4 { color: #17212e; }
+body.light-theme .footer-links a:hover { color: #b38400; }
+body.light-theme .goal-item:active,
+body.light-theme .stat-card:active,
+body.light-theme .strategy-card:active { border-color: #f5b700; }

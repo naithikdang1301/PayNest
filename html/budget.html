@@ -41,7 +41,7 @@
         </nav>
 
         <div class="nav-buttons">
-            <button class="btn-theme">🌙</button>
+            <button class="btn-theme" type="button">🌙</button>
             <button class="btn-profile" onclick="goToProfile()">👤 Profile</button>
             <button class="btn-outline" onclick="goToLogin()">Log In</button>
             <button class="btn-yellow" onclick="goToSignup()">Sign Up</button>
@@ -74,14 +74,10 @@
 
         <div class="actions">
 
-            <select class="month">
-                <option>📅 May 2026</option>
-                <option>📅 June 2026</option>
-                <option>📅 July 2026</option>
-                <option>📅 August 2026</option>
-            </select>
-
-            <button class="set-budget">＋ Set Monthly Budget</button>
+            <input class="month" type="month" id="monthPicker" aria-label="Select month">
+            <button class="set-budget" type="button" id="setBudgetBtn">＋ Set Monthly Budget</button>
+            <button class="set-budget" type="button" id="addCategoryBtn">＋ Add Category</button>
+            <button class="set-budget" type="button" id="addExpenseBtn">＋ Add Expense</button>
 
         </div>
     </section>
@@ -95,8 +91,8 @@
             <i class="purple">▱</i>
             <div>
                 <small>Monthly Budget</small>
-                <h2>₹15,000</h2>
-                <span class="edit">✎ Edit Budget</span>
+                <h2 id="monthlyBudget">₹0</h2>
+                <button class="edit" type="button" id="editBudgetBtn">✎ Edit Budget</button>
             </div>
         </div>
 
@@ -104,8 +100,8 @@
             <i class="red">↓</i>
             <div>
                 <small>Spent So Far</small>
-                <h2>₹9,300</h2>
-                <span>62% of budget</span>
+                <h2 id="spentAmount">₹0</h2>
+                <span id="spentPercent">Set a budget</span>
             </div>
         </div>
 
@@ -113,8 +109,8 @@
             <i class="green">↗</i>
             <div>
                 <small>Remaining</small>
-                <h2>₹5,700</h2>
-                <span>38% left</span>
+                <h2 id="remainingAmount">₹0</h2>
+                <span id="remainingPercent">No budget set</span>
             </div>
         </div>
 
@@ -122,8 +118,8 @@
             <i class="yellow">▣</i>
             <div>
                 <small>Days Left</small>
-                <h2>12 Days</h2>
-                <span>Till 31 May 2026</span>
+                <h2 id="daysLeft">0 Days</h2>
+                <span id="monthEnd">—</span>
             </div>
         </div>
 
@@ -142,9 +138,9 @@
 
             <div class="progress-body">
 
-                <div class="donut">
+                <div class="donut" id="budgetDonut">
                     <div>
-                        <strong>62%</strong>
+                        <strong id="donutPercent">0%</strong>
                         <small>of budget used</small>
                     </div>
                 </div>
@@ -152,19 +148,18 @@
                 <div class="progress-info">
 
                     <h2>
-                        ₹9,300
-                        <small>/ ₹15,000</small>
+                        <span id="progressSpent">₹0</span>
+                        <small>/ <span id="progressBudget">₹0</span></small>
                     </h2>
 
-                    <div class="bar">
-                        <b style="--value:62%;"></b>
+                    <div class="bar" id="budgetProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <b id="progressFill" style="--value:0%;"></b>
                     </div>
 
-                    <label>✓ &nbsp; You're on track! Keep it up.</label>
+                    <label id="budgetStatus">Set your monthly budget</label>
 
                     <p>
-                        You're doing great. Try to keep your
-                        spending under control.
+<span id="budgetMessage">Enter a budget to start tracking.</span><br><span id="dailyAllowance"></span>
                     </p>
 
                 </div>
@@ -178,32 +173,8 @@
 
             <h3>🔔 &nbsp; Budget Alerts</h3>
 
-            <div class="alert">
-                <i class="green">✓</i>
-                <div>
-                    <b>You're on track</b>
-                    <small>Good job! You're within your budget.</small>
-                </div>
-            </div>
-
-            <div class="alert">
-                <i class="yellow">!</i>
-                <div>
-                    <b>62% budget used</b>
-                    <small>Keep tracking to stay in control.</small>
-                </div>
-            </div>
-
-            <div class="alert">
-                <i>✓</i>
-                <div>
-                    <b>Set spending limit</b>
-                    <small>You can update your budget anytime.</small>
-                </div>
-            </div>
-
-            <a href="#" class="view-alerts">View All Alerts →</a>
-
+            <p id="alertCount">0 updates</p>
+            <div id="alertsList" aria-live="polite"></div>
         </div>
 
     </section>
@@ -228,41 +199,8 @@
         </div>
 
 
-        <div class="budget-rules-grid">
-
-            <div class="budget-rule-card">
-                <div class="rule-icon rule-blue">💳</div>
-
-                <h4>Set spending limits</h4>
-
-                <p>
-                    Create limits for different spending categories
-                    and avoid unnecessary overspending.
-                </p>
-            </div>
-
-            <div class="budget-rule-card">
-                <div class="rule-icon rule-yellow">📊</div>
-
-                <h4>Track every expense</h4>
-
-                <p>
-                    Keep your spending records updated regularly
-                    so you always know where your money goes.
-                </p>
-            </div>
-
-            <div class="budget-rule-card">
-                <div class="rule-icon rule-green">💰</div>
-
-                <h4>Protect your savings</h4>
-
-                <p>
-                    Keep a portion of your monthly budget reserved
-                    for savings and future goals.
-                </p>
-            </div>
-
+        <div class="budget-rules-grid" id="categoryGrid">
+            <!-- Category cards added dynamically by JavaScript -->
         </div>
     </section>
 
@@ -284,67 +222,29 @@
         </div>
 
 
-        <div class="tip-grid">
-
-            <div class="budget-tip">
-
-                <div class="tip-number">01</div>
-
-                <div>
-                    <b>Set a daily spending limit</b>
-
-                    <p>
-                        Divide your remaining budget by the days left.
-                        This gives you a realistic amount to spend each day.
-                    </p>
-
-                    <span class="tip-highlight">
-                        💰 Remaining ÷ Days Left
-                    </span>
-                </div>
-
-            </div>
+        <div class="tip-grid" id="tipsGrid">
+            <!-- Personalized tips added dynamically by JavaScript -->
+        </div>
+    </section>
 
 
-            <div class="budget-tip">
-
-                <div class="tip-number">02</div>
-
-                <div>
-                    <b>Control your biggest category</b>
-
-                    <p>
-                        Food & Dining is your largest expense right now.
-                        Small reductions here can create noticeable savings.
-                    </p>
-
-                    <span class="tip-highlight">
-                        🎯 Focus on high-spending categories
-                    </span>
-                </div>
-
-            </div>
-
-
-            <div class="budget-tip">
-
-                <div class="tip-number">03</div>
-
-                <div>
-                    <b>Use the 24-hour rule</b>
-
-                    <p>
-                        For non-essential purchases, wait one day before
-                        buying. It helps reduce impulse spending.
-                    </p>
-
-                    <span class="tip-highlight">
-                        🧠 Think first. Spend later.
-                    </span>
-                </div>
-
-            </div>
-
+    <!-- EXPENSES: Added below original sections; original layout preserved -->
+    <section class="card budget-expenses">
+        <div class="section-head">
+            <div><h3>💸 &nbsp; Your Expenses</h3><p class="section-subtitle">Expenses for the selected month</p></div>
+        </div>
+        <div class="budget-expense-tools"><input id="expenseSearch" type="search" placeholder="Search expenses..." aria-label="Search expenses"></div>
+        <div class="budget-table-wrap"><table class="budget-expense-table">
+            <thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Amount</th><th>Actions</th></tr></thead>
+            <tbody id="expenseRows"></tbody>
+        </table></div>
+        <p id="expenseEmpty" class="budget-empty">No expenses yet.</p>
+        <div class="budget-data-actions">
+            <button type="button" id="exportCsvBtn">Export CSV</button>
+            <button type="button" id="exportJsonBtn">Backup JSON</button>
+            <button type="button" id="importBtn">Restore Backup</button>
+            <button type="button" id="clearBtn">Clear All Data</button>
+            <input type="file" id="importFile" accept=".json,application/json" hidden>
         </div>
     </section>
 
@@ -394,14 +294,58 @@
 
 
     <div class="footer-bottom">
-        © 2026 PayNest. All rights reserved.
+        © <span id="copyrightYear">2026</span> PayNest. All rights reserved.
     </div>
 
 </footer>
 
 
-<script src="../javascript/script.js"></script>
+
+<!-- Native HTML dialogs: existing page styling remains unchanged -->
+<dialog class="budget-dialog" id="budgetDialog">
+  <form id="budgetForm"><div class="budget-dialog-head"><h2>Monthly Budget</h2><button type="button" data-close>✕</button></div>
+    <p id="budgetDialogMonth"></p><label for="budgetInput">Budget amount (₹)</label>
+    <input id="budgetInput" type="number" min="0" max="999999999999" step="0.01" required>
+    <div class="budget-dialog-actions"><button type="button" data-close>Cancel</button><button type="submit">Save Budget</button></div>
+  </form>
+</dialog>
+<dialog class="budget-dialog" id="categoryDialog">
+  <form id="categoryForm"><div class="budget-dialog-head"><h2 id="categoryDialogTitle">Add Category</h2><button type="button" data-close>✕</button></div>
+    <input type="hidden" id="categoryId"><label for="categoryName">Category name</label>
+    
+
+<select id="categoryName" name="categoryName" required>
+    <option value="">Select Category</option>
+    <option value="Food & Dining">Food & Dining</option>
+    <option value="Travel & Transport">Travel & Transport</option>
+    <option value="Shopping">Shopping</option>
+    <option value="Bills & Utilities">Bills & Utilities</option>
+    <option value="Education">Education</option>
+    <option value="Entertainment">Entertainment</option>
+    <option value="Others">Others</option>
+</select>
+    <label for="categoryLimit">Monthly spending limit (₹, optional)</label>
+    <input id="categoryLimit" type="number" min="0" max="999999999999" step="0.01" placeholder="Optional">
+    <div class="budget-dialog-actions"><button type="button" data-close>Cancel</button><button type="submit">Save Category</button></div>
+  </form>
+</dialog>
+<dialog class="budget-dialog" id="expenseDialog">
+  <form id="expenseForm"><div class="budget-dialog-head"><h2 id="expenseDialogTitle">Add Expense</h2><button type="button" data-close>✕</button></div>
+    <input type="hidden" id="expenseId"><label for="expenseDate">Date</label><input type="date" id="expenseDate" required>
+    <label for="expenseDescription">Description</label><input id="expenseDescription" type="text" maxlength="120" required placeholder="What did you spend on?">
+    <label for="expenseCategory">Category</label><select id="expenseCategory" required></select>
+    <label for="expenseAmount">Amount (₹)</label><input type="number" id="expenseAmount" min="0.01" max="999999999999" step="0.01" required>
+    <div class="budget-dialog-actions"><button type="button" data-close>Cancel</button><button type="submit">Save Expense</button></div>
+  </form>
+</dialog>
+<dialog class="budget-dialog" id="confirmDialog">
+  <div class="budget-dialog-head"><h2 id="confirmTitle">Confirm</h2></div><p id="confirmMessage"></p>
+  <div class="budget-dialog-actions"><button type="button" id="confirmCancel">Cancel</button><button type="button" id="confirmYes">Confirm</button></div>
+</dialog>
+<div class="budget-toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="../javascript/common.js"></script>
+<script src="../javascript/budget.js" defer></script>
 
 </body>
 </html>
-

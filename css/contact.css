@@ -766,3 +766,124 @@ textarea:focus{
     gap:30px;
   }
 }
+
+/* Secondary text readability */
+
+.form-heading p,
+.trust-item p,
+.terms {
+    color: #b8bec7;
+}
+
+.contact-detail p,
+.hero-text {
+    color: #c0c5cc;
+}
+
+/* Contact form success message */
+
+#successMessage {
+    display: none;
+    background: rgba(46, 213, 115, 0.1);
+    color: #2ed573;
+    border: 1px solid #2ed573;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* ==========================================
+   CONTACT PAGE - LIGHT THEME
+   Theme state is managed by common.js.
+   Original dark mode, layout and navbar preserved.
+   ========================================== */
+
+body.light-theme {
+    background: #f4f6fa;
+    color: #17202c;
+    color-scheme: light;
+}
+
+body.light-theme .bg-overlay {
+    background: rgba(244, 246, 250, .84);
+}
+
+/* Keep the original black navbar in both themes. */
+body.light-theme .navbar {
+    background: #000;
+    color: #fff;
+}
+body.light-theme .navbar .logo-text,
+body.light-theme .navbar .nav-links a { color: #ddd; }
+body.light-theme .navbar .nav-links a:hover,
+body.light-theme .navbar .nav-links a.active { color: #f5b700; }
+
+body.light-theme .contact-detail,
+body.light-theme .contact-form,
+body.light-theme .trust-strip {
+    background: rgba(255,255,255,.96);
+    border-color: #dce2ea;
+    color: #17202c;
+    box-shadow: 0 6px 22px rgba(20,35,55,.06);
+}
+body.light-theme .contact-detail:hover {
+    background: #fff9e9;
+    border-color: #d8b64b;
+}
+body.light-theme .hero-text,
+body.light-theme .contact-detail p,
+body.light-theme .form-heading p,
+body.light-theme .trust-item p,
+body.light-theme .terms {
+    color: #4b5563;
+}
+body.light-theme .form-group label,
+body.light-theme .contact-info h1,
+body.light-theme .contact-detail h3,
+body.light-theme .form-heading h2,
+body.light-theme .trust-item h3 { color: #17202c; }
+
+body.light-theme .input-box,
+body.light-theme select,
+body.light-theme textarea {
+    background: #fff;
+    border-color: #cbd5e1;
+    color: #17202c;
+}
+body.light-theme .input-box input,
+body.light-theme select option {
+    background: #fff;
+    color: #17202c;
+}
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder { color: #64748b; }
+body.light-theme .input-box span { color: #64748b; }
+body.light-theme .input-box:focus-within,
+body.light-theme select:focus,
+body.light-theme textarea:focus { border-color: #c29200; }
+
+body.light-theme .trust-item { border-color: #e2e8f0; }
+body.light-theme .footer { border-color: #d7dee8; }
+body.light-theme .footer-bottom { border-color: #d7dee8; color: #596579; }
+body.light-theme .footer-brand h3,
+body.light-theme .footer-links h4 { color: #17202c; }
+body.light-theme .footer-brand p,
+body.light-theme .footer-links a { color: #4b5563; }
+body.light-theme .footer-links a:hover { color: #9a7100; }
+body.light-theme .social-links a {
+    background: #fff;
+    border-color: #d7dee8;
+    color: #475569;
+}
+body.light-theme .social-links a:hover {
+    background: #f5b700;
+    border-color: #f5b700;
+    color: #000;
+}
+body.light-theme #successMessage {
+    background: #e7f8ee;
+    color: #176b3b;
+    border-color: #58ae7a;
+}

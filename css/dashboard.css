@@ -883,7 +883,7 @@ button:active,
     }
 
     to{
-        width:62%;
+        width:100%;
     }
 }
 
@@ -894,7 +894,7 @@ button:active,
     }
 
     to{
-        width:46%;
+        width:100%;
     }
 }
 
@@ -1254,3 +1254,37 @@ button:active,
         gap:20px 10px;
     }
 }
+/* Dashboard dynamic content and income form */
+#budgetFill,.goal-bar span{animation:none;transition:width .5s ease;width:0;}
+#dashboardGoals{display:grid;gap:16px;}
+#dashboardGoals .goal{margin-bottom:8px;}
+#dashboardGoals .goal-info{min-width:0;}
+#dashboardGoals .goal-info h3{overflow-wrap:anywhere;}
+#dashboardAlerts .alert{margin-bottom:10px;}
+#dashboardTransactions .transaction:last-child{border-bottom:0;}
+.dashboard-empty{padding:18px 8px;color:#aab1ba;font-size:13px;}
+.action{cursor:pointer;}
+.action:focus-visible{outline:2px solid #f5b700;outline-offset:3px;}
+.income-modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:16px;}
+.income-modal.show{display:flex;}
+.income-dialog{position:relative;width:100%;max-width:440px;background:#161b22;color:#fff;border:1px solid #4b4124;border-radius:16px;padding:26px;box-shadow:0 20px 70px #0008;}
+.income-dialog h2{color:#f5b700;margin-bottom:18px;}
+.income-dialog label{display:block;margin:12px 0 6px;font-size:13px;}
+.income-dialog input{display:block;width:100%;padding:12px;background:#0f131a;color:#fff;border:1px solid #444;border-radius:8px;color-scheme:dark;}
+.income-form-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px;}
+.income-form-actions button{background:#343a40;color:#fff;}
+.income-form-actions .income-save{background:#f5b700;color:#151515;}
+.income-close{position:absolute;right:14px;top:10px;background:transparent;color:#fff;font-size:25px;padding:4px 9px;}
+body.light-theme{color:#17202c;}
+body.light-theme .overlay{background:rgba(242,245,249,.87);}
+body.light-theme .card,body.light-theme .summary-card,body.light-theme .tip{background:rgba(255,255,255,.94);border-color:#d7dce2;}
+body.light-theme .dashboard-head p,body.light-theme .summary-card small,body.light-theme .summary-card p,body.light-theme .budget-progress>p,body.light-theme .goal-info p{color:#596475;}
+body.light-theme .dashboard-head select{background:#fff;color:#17202c;border-color:#cbd3db;}
+body.light-theme .alert,body.light-theme .action{background:#e8edf4;}
+body.light-theme .alert:hover,body.light-theme .action:hover{background:#dce4ef;}
+body.light-theme .transaction,body.light-theme .transaction-head{border-color:#d9dfe7;}
+body.light-theme .income-dialog{background:#fff;color:#17202c;}
+body.light-theme .income-dialog input{background:#f7f9fc;color:#17202c;color-scheme:light;}
+body.light-theme .income-close{color:#17202c;}
+
+

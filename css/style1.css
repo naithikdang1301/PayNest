@@ -533,6 +533,83 @@ button:active,
 }
 
 
+/* LIGHT THEME */
+
+body.light-theme .navbar {
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar text */
+body.light-theme .navbar a,
+body.light-theme .logo-text,
+body.light-theme .logo-text strong,
+body.light-theme .logo-text small {
+    color: #000000;
+}
+
+/* Navbar buttons */
+body.light-theme .btn-profile {
+    color: #000000;
+    background: #f1f1f1;
+    border-color: #dddddd;
+}
+
+/* Cards ka background white */
+body.light-theme .card,
+body.light-theme .f-card,
+body.light-theme .s-box,
+body.light-theme .step-card,
+body.light-theme .cta-banner {
+    background: #ffffff;
+    color: #000000;
+    border-color: #dddddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Cards ke andar headings aur paragraphs */
+body.light-theme .card h3,
+body.light-theme .card p,
+body.light-theme .f-card strong,
+body.light-theme .f-card small,
+body.light-theme .s-box h2,
+body.light-theme .s-box small,
+body.light-theme .step-card h3,
+body.light-theme .step-card p,
+body.light-theme .cta-banner h2,
+body.light-theme .cta-banner p {
+    color: #000000;
+}
+
+/* Sections ka text */
+body.light-theme .section-title,
+body.light-theme .section-subtitle {
+    color: #000000;
+}
+
+/* Footer */
+body.light-theme .footer {
+    background: #ffffff;
+    color: #000000;
+    border-top: 1px solid #dddddd;
+}
+
+body.light-theme .footer h3,
+body.light-theme .footer h4,
+body.light-theme .footer p,
+body.light-theme .footer a {
+    color: #000000;
+}
+
+/* Theme button */
+body.light-theme .btn-theme {
+    background: #f1f1f1;
+    color: #000000;
+    border-color: #dddddd;
+}
+
+
 /* ================= SMALL MOBILE ================= */
 
 @media(max-width:400px){
@@ -838,4 +915,77 @@ button:active,
   .footer-links{
     grid-template-columns:1fr 1fr;
   }
+}
+
+
+/* =============================================
+   PAYNEST HOME - LIGHT THEME CORRECTIONS
+   Navbar stays black in both themes.
+   ============================================= */
+body.light-theme {
+    color: #17202c;
+}
+body.light-theme .bg-overlay {
+    background: rgba(242, 245, 249, .88);
+}
+body.light-theme .navbar {
+    background: #000;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+body.light-theme .navbar .logo-text,
+body.light-theme .navbar .logo-text strong {
+    color: #fff;
+}
+body.light-theme .navbar .logo-text small {
+    color: #aaa;
+}
+body.light-theme .navbar .nav-links a {
+    color: #bbb;
+}
+body.light-theme .navbar .nav-links a:hover,
+body.light-theme .navbar .nav-links a.active {
+    color: #f5b700;
+    background: rgba(255,255,255,.1);
+}
+body.light-theme .navbar .btn-profile,
+body.light-theme .navbar .btn-outline,
+body.light-theme .navbar .btn-yellow,
+body.light-theme .navbar .btn-theme {
+    background: #222;
+    color: #fff;
+    border-color: #444;
+}
+body.light-theme .navbar .btn-profile:hover,
+body.light-theme .navbar .btn-outline:hover,
+body.light-theme .navbar .btn-yellow:hover,
+body.light-theme .navbar .btn-theme:hover {
+    background: #f5b700;
+    color: #000;
+}
+body.light-theme .feature-row,
+body.light-theme .stats-row {
+    background: rgba(255,255,255,.95);
+    border-color: #ddd;
+    color: #17202c;
+}
+body.light-theme .hero-left h1,
+body.light-theme .hero-left .subtitle,
+body.light-theme .rating-box,
+body.light-theme .section-title,
+body.light-theme .section-subtitle {
+    color: #17202c;
+}
+body.light-theme .f-card:hover,
+body.light-theme .s-box:hover,
+body.light-theme .card:hover,
+body.light-theme .step-card:hover {
+    background: #f5f7fa;
+}
+body.light-theme .f-card small,
+body.light-theme .s-box small {
+    color: #596475;
+}
+body.light-theme .footer .footer-links a:hover {
+    color: #a47700;
 }

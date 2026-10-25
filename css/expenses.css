@@ -895,3 +895,48 @@ tbody tr:hover{
     width:35px;
   }
 }
+
+/* ===== Functional Expenses Page additions ===== */
+.expense-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:2000;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+.expense-modal.show{display:flex}
+.expense-dialog{width:100%;max-width:460px;background:#151a21;border:1px solid #5b4a12;border-radius:14px;padding:24px;color:#fff;box-shadow:0 15px 50px #0009}
+.expense-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.expense-modal-head h2{color:#f5b700;font-size:21px}
+.close-modal{background:transparent;color:#fff;font-size:26px;padding:0 8px}
+#expenseForm{display:flex;flex-direction:column;gap:9px}
+#expenseForm label{font-size:12px;color:#c9cdd4;margin-top:7px}
+#expenseForm input,#expenseForm select{width:100%;padding:12px;border-radius:7px;border:1px solid #414853;background:#20252e;color:#fff;font-size:13px;color-scheme:dark}
+#expenseForm input:focus,#expenseForm select:focus{outline:1px solid #f5b700}
+.expense-modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+.cancel-expense{background:#353b42;color:#fff;border-radius:7px}
+.save-expense{background:#f5b700;color:#111;border-radius:7px}
+.expense-action{font-size:11px;min-height:30px;padding:5px 7px;background:#282c32;color:#f5b700;border-radius:5px;margin:2px}
+.delete-action{color:#ff6b76}
+.empty-expenses{text-align:center!important;color:#b8bec7;padding:30px 10px}
+.pg-btn:disabled{opacity:.35;cursor:not-allowed}
+.chart-bars .bar{flex-shrink:0}
+body.light-theme{color:#17202b}
+body.light-theme .bg-overlay{background:rgba(245,247,250,.9)}
+body.light-theme .metric-card,body.light-theme .card-panel,body.light-theme .export-banner{background:rgba(255,255,255,.95);border-color:#d9dfe6}
+body.light-theme .metric-data h2,body.light-theme .panel-header h3,body.light-theme .bar-label{color:#17202b}
+body.light-theme .filter-select,body.light-theme .search-input{background:#fff;color:#17202b;border-color:#cdd4dc}
+body.light-theme .expense-dialog{background:#fff;color:#17202b}
+body.light-theme #expenseForm input,body.light-theme #expenseForm select{background:#f5f7fa;color:#17202b;color-scheme:light}
+body.light-theme #expenseForm label{color:#46515e}
+body.light-theme .close-modal{color:#17202b}
+body.light-theme .expense-action{background:#e9edf2}
+body.light-theme .empty-expenses{color:#687584}
+body.light-theme tbody tr:hover{background:#e8edf3}
+body.light-theme th,body.light-theme td{border-color:#d9dfe6}
+@media print{
+  body{background:white!important;color:black!important;padding:0}
+  .bg-overlay,.navbar,.controls-row,.expense-modal,.pagination-row,.banner-actions,.footer,.expense-action,.small-btn{display:none!important}
+  .container{margin:0!important;max-width:none!important}
+  .metric-card,.card-panel,.export-banner{background:white!important;color:black!important;border:1px solid #ddd!important;break-inside:avoid}
+  .metric-data h2,.panel-header h3,.bar-label,td,th{color:black!important}
+  .chart-container{overflow:visible!important}
+  .chart-bars{min-width:0!important;gap:4px!important}
+  .bar{width:30px!important}
+  table{min-width:0!important}
+  .page-header{margin-top:0}
+}

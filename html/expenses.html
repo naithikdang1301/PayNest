@@ -1,430 +1,199 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayNest - Expenses</title>
-    <link rel="stylesheet" href="../css/expenses.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PayNest - Expenses</title>
+<link href="../css/expenses.css" rel="stylesheet"/>
 </head>
-
 <body>
-
-    <div class="bg-overlay"></div>
-
-    <header class="navbar">
-
-        <div class="logo">
-            <div class="logo-icon"></div>
-
-            <div class="logo-text">
-                <strong>
-                    <span>Pay</span>
-                    <span style="color:#f5b700">Nest</span>
-                </strong>
-                <small>Smart Spend. Bright Future.</small>
-            </div>
-        </div>
-
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="hamburger">☰</label>
-
-        <div class="nav-menu">
-
-            <nav class="nav-links">
-                <a href="home.html">🏠 Home</a>
-                <a href="dashboard.html">📊 Dashboard</a>
-                <a href="expenses.html" class="active">💸 Expenses</a>
-                <a href="budget.html">🎯 Budget</a>
-                <a href="savings.html">🌱 Savings</a>
-                <a href="about.html">💬 About Us</a>
-                <a href="contact.html">🤖 Contact Us</a>
-            </nav>
-
-            <div class="nav-buttons">
-                <button class="btn-theme">🌙</button>
-                <button class="btn-profile" onclick="goToProfile()">👤 Profile</button>
-                <button class="btn-outline" onclick="goToLogin()">Log In</button>
-                <button class="btn-yellow" onclick="goToSignup()">Sign Up</button>
-            </div>
-
-        </div>
-    </header>
-
-    <main class="container">
-
-        <section class="page-header">
-
-            <div class="title-row">
-                <span class="yellow-bar"></span>
-
-                <div>
-                    <h1>Expenses</h1>
-                    <p class="header-subtitle">
+<div class="bg-overlay"></div>
+<header class="navbar">
+<div class="logo">
+<div class="logo-icon"></div>
+<div class="logo-text">
+<strong>
+<span>Pay</span>
+<span style="color:#f5b700">Nest</span>
+</strong>
+<small>Smart Spend. Bright Future.</small>
+</div>
+</div>
+<input id="menu-toggle" type="checkbox"/>
+<label class="hamburger" for="menu-toggle">☰</label>
+<div class="nav-menu">
+<nav class="nav-links">
+<a href="home.html">🏠 Home</a>
+<a href="dashboard.html">📊 Dashboard</a>
+<a class="active" href="expenses.html">💸 Expenses</a>
+<a href="budget.html">🎯 Budget</a>
+<a href="savings.html">🌱 Savings</a>
+<a href="about.html">💬 About Us</a>
+<a href="contact.html">🤖 Contact Us</a>
+</nav>
+<div class="nav-buttons">
+<button class="btn-theme">🌙</button>
+<button class="btn-profile" onclick="goToProfile()">👤 Profile</button>
+<button class="btn-outline" onclick="goToLogin()">Log In</button>
+<button class="btn-yellow" onclick="goToSignup()">Sign Up</button>
+</div>
+</div>
+</header>
+<main class="container">
+<section class="page-header">
+<div class="title-row">
+<span class="yellow-bar"></span>
+<div>
+<h1>Expenses</h1>
+<p class="header-subtitle">
                         Manage and analyze all your daily expenses.
                     </p>
-                </div>
-            </div>
-
-            <div class="controls-row">
-                <button class="btn-yellow btn-add">+ Add Expense</button>
-
-                <select class="filter-select">
-                    <option>📅 May 2026</option>
-                    <option>📅 June 2026</option>
-                    <option>📅 July 2026</option>
-                    <option>📅 August 2026</option>
-                </select>
-
-                <select class="filter-select">
-                    <option>All Categories</option>
-                    <option>🍔 Food & Dining</option>
-                    <option>🚘 Travel & Transport</option>
-                    <option>🛍️ Shopping</option>
-                    <option>📄 Bills & Utilities</option>
-                    <option>📚 Education</option>
-                    <option>🎬 Entertainment</option>
-                    <option>📦 Others</option>
-                </select>
-
-                <input
-                    type="text"
-                    class="search-input"
-                    placeholder="Search expenses... 🔍"
-                >
-            </div>
-
-        </section>
-
-        <section class="metrics-grid">
-
-            <div class="metric-card">
-                <div class="metric-icon yellow-bg">👛</div>
-
-                <div class="metric-data">
-                    <small>Total Expenses</small>
-                    <h2>₹12,450.00</h2>
-                    <span class="sub-text">This Month</span>
-                    <span class="green-text">↑ 12.5% from Apr</span>
-                </div>
-            </div>
-
-            <div class="metric-card">
-                <div class="metric-icon green-bg">📊</div>
-
-                <div class="metric-data">
-                    <small>Average Daily Expense</small>
-                    <h2>₹401.61</h2>
-                    <span class="sub-text">This Month</span>
-                    <span class="green-text">↓ 5.3% from Apr</span>
-                </div>
-            </div>
-
-            <div class="metric-card">
-                <div class="metric-icon red-bg">🍕</div>
-
-                <div class="metric-data">
-                    <small>Highest Category</small>
-                    <h2>Food & Dining</h2>
-                    <span class="bold-val">₹3,250.00</span>
-                    <span class="sub-text">26.1% of total</span>
-                </div>
-            </div>
-
-            <div class="metric-card">
-                <div class="metric-icon purple-bg">💳</div>
-
-                <div class="metric-data">
-                    <small>Today's Expense</small>
-                    <h2>₹620.00</h2>
-                    <span class="sub-text">2 Transactions</span>
-                    <span class="green-text">↑ 8.7% from yesterday</span>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="card-panel">
-
-            <div class="panel-header">
-                <h3>Expenses by Category</h3>
-
-                <select class="filter-select small-select">
-                    <option>This Month</option>
-                    <option>Last Month</option>
-                    <option>Last 3 Months</option>
-                    <option>This Year</option>
-                </select>
-            </div>
-
-            <div class="chart-container">
-
-                <div class="y-axis">
-                    <span>₹3,500</span>
-                    <span>₹3,000</span>
-                    <span>₹2,500</span>
-                    <span>₹2,000</span>
-                    <span>₹1,000</span>
-                    <span>₹500</span>
-                    <span>₹0</span>
-                </div>
-
-                <div class="chart-bars">
-
-                    <div class="bar-col">
-                        <span class="bar-val">₹3,250</span>
-                        <div class="bar bar-yellow" style="height:90%"></div>
-                        <span class="bar-label">Food & Dining</span>
-                        <small>26.1%</small>
-                    </div>
-
-                    <div class="bar-col">
-                        <span class="bar-val">₹2,240</span>
-                        <div class="bar bar-blue" style="height:65%"></div>
-                        <span class="bar-label">Travel</span>
-                        <small>18.0%</small>
-                    </div>
-
-                    <div class="bar-col">
-                        <span class="bar-val">₹2,145</span>
-                        <div class="bar bar-green" style="height:62%"></div>
-                        <span class="bar-label">Shopping</span>
-                        <small>17.2%</small>
-                    </div>
-
-                    <div class="bar-col">
-                        <span class="bar-val">₹1,595</span>
-                        <div class="bar bar-purple" style="height:48%"></div>
-                        <span class="bar-label">Bills</span>
-                        <small>12.8%</small>
-                    </div>
-
-                    <div class="bar-col">
-                        <span class="bar-val">₹1,195</span>
-                        <div class="bar bar-pink" style="height:38%"></div>
-                        <span class="bar-label">Education</span>
-                        <small>9.6%</small>
-                    </div>
-
-                    <div class="bar-col">
-                        <span class="bar-val">₹1,085</span>
-                        <div class="bar bar-orange" style="height:32%"></div>
-                        <span class="bar-label">Entertainment</span>
-                        <small>8.7%</small>
-                    </div>
-
-                    <div class="bar-col">
-                        <span class="bar-val">₹940</span>
-                        <div class="bar bar-grey" style="height:28%"></div>
-                        <span class="bar-label">Others</span>
-                        <small>7.6%</small>
-                    </div>
-
-                </div>
-            </div>
-
-        </section>
-
-        <section class="card-panel">
-
-            <div class="panel-header">
-                <h3>Expense History</h3>
-                <button class="btn-outline small-btn">📥 Export</button>
-            </div>
-
-            <div class="table-wrapper">
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Category</th>
-                            <th>Description</th>
-                            <th>Amount</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td>May 20, 2026</td>
-                            <td>
-                                <span class="cat-tag yellow-tag">
-                                    🍔 Food & Dining
-                                </span>
-                            </td>
-                            <td>Lunch at Cafe</td>
-                            <td><strong>₹350.00</strong></td>
-                            <td>⋮</td>
-                        </tr>
-
-                        <tr>
-                            <td>May 20, 2026</td>
-                            <td>
-                                <span class="cat-tag blue-tag">
-                                    🚘 Travel
-                                </span>
-                            </td>
-                            <td>Uber Ride</td>
-                            <td><strong>₹220.00</strong></td>
-                            <td>⋮</td>
-                        </tr>
-
-                        <tr>
-                            <td>May 19, 2026</td>
-                            <td>
-                                <span class="cat-tag purple-tag">
-                                    📚 Education
-                                </span>
-                            </td>
-                            <td>DSA Book</td>
-                            <td><strong>₹799.00</strong></td>
-                            <td>⋮</td>
-                        </tr>
-
-                        <tr>
-                            <td>May 19, 2026</td>
-                            <td>
-                                <span class="cat-tag green-tag">
-                                    📄 Bills & Utilities
-                                </span>
-                            </td>
-                            <td>Mobile Recharge</td>
-                            <td><strong>₹199.00</strong></td>
-                            <td>⋮</td>
-                        </tr>
-
-                        <tr>
-                            <td>May 18, 2026</td>
-                            <td>
-                                <span class="cat-tag pink-tag">
-                                    🎬 Entertainment
-                                </span>
-                            </td>
-                            <td>Movie Tickets</td>
-                            <td><strong>₹450.00</strong></td>
-                            <td>⋮</td>
-                        </tr>
-
-                        <tr>
-                            <td>May 18, 2026</td>
-                            <td>
-                                <span class="cat-tag orange-tag">
-                                    🛍️ Shopping
-                                </span>
-                            </td>
-                            <td>T-Shirt</td>
-                            <td><strong>₹999.00</strong></td>
-                            <td>⋮</td>
-                        </tr>
-
-                        <tr>
-                            <td>May 17, 2026</td>
-                            <td>
-                                <span class="cat-tag yellow-tag">
-                                    🍕 Food & Dining
-                                </span>
-                            </td>
-                            <td>Pizza</td>
-                            <td><strong>₹450.00</strong></td>
-                            <td>⋮</td>
-                        </tr>
-
-                        <tr>
-                            <td>May 17, 2026</td>
-                            <td>
-                                <span class="cat-tag blue-tag">
-                                    🚌 Travel
-                                </span>
-                            </td>
-                            <td>Bus Ticket</td>
-                            <td><strong>₹120.00</strong></td>
-                            <td>⋮</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-            </div>
-
-            <div class="pagination-row">
-                <span>Showing 1 to 8 of 24 entries</span>
-
-                <div class="pg-btns">
-                    <button class="pg-btn">&lt;</button>
-                    <button class="pg-btn active">1</button>
-                    <button class="pg-btn">2</button>
-                    <button class="pg-btn">3</button>
-                    <button class="pg-btn">&gt;</button>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="export-banner">
-
-            <div class="banner-info">
-                <span class="banner-icon">📄</span>
-
-                <div>
-                    <h3>Export Your Report</h3>
-                    <p>Download your expense report in PDF or CSV format.</p>
-                </div>
-            </div>
-
-            <div class="banner-actions">
-                <button class="btn-outline">Download PDF</button>
-                <button class="btn-outline">Download CSV</button>
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer class="footer">
-
-        <div class="footer-brand">
-            <div class="footer-logo"></div>
-
-            <div>
-                <h3>Pay<span>Nest</span></h3>
-                <p>Smart. Spend. Bright Future.</p>
-            </div>
-        </div>
-
-        <div class="footer-links">
-
-            <div>
-                <h4>Quick Links</h4>
-                <a href="home.html">Home</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="expenses.html">Expenses</a>
-            </div>
-
-            <div>
-                <h4>More</h4>
-                <a href="budget.html">Budget</a>
-                <a href="savings.html">Savings</a>
-                <a href="about.html">About Us</a>
-            </div>
-
-            <div>
-                <h4>Support</h4>
-                <a href="contact.html">Contact Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
+</div>
+</div>
+<div class="controls-row">
+<button class="btn-yellow btn-add" type="button">+ Add Expense</button>
+<select class="filter-select" id="monthFilter"></select>
+<select class="filter-select" id="categoryFilter"><option value="">All Categories</option><option value="Food &amp; Dining">🍔 Food &amp; Dining</option><option value="Travel &amp; Transport">🚘 Travel &amp; Transport</option><option value="Shopping">🛍️ Shopping</option><option value="Bills &amp; Utilities">📄 Bills &amp; Utilities</option><option value="Education">📚 Education</option><option value="Entertainment">🎬 Entertainment</option><option value="Others">📦 Others</option></select>
+<input class="search-input" id="expenseSearch" placeholder="Search expenses... 🔍" type="text"/>
+</div>
+</section>
+<section class="metrics-grid">
+<div class="metric-card">
+<div class="metric-icon yellow-bg">👛</div>
+<div class="metric-data">
+<small>Total Expenses</small>
+<h2>₹0.00</h2>
+<span class="sub-text">This Month</span>
+<span class="green-text">—</span>
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-icon green-bg">📊</div>
+<div class="metric-data">
+<small>Average Daily Expense</small>
+<h2>₹0.00</h2>
+<span class="sub-text">This Month</span>
+<span class="green-text">—</span>
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-icon red-bg">🍕</div>
+<div class="metric-data">
+<small>Highest Category</small>
+<h2>—</h2>
+<span class="bold-val">—</span>
+<span class="sub-text">0% of total</span>
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-icon purple-bg">💳</div>
+<div class="metric-data">
+<small>Today's Expense</small>
+<h2>₹0.00</h2>
+<span class="sub-text">0 Transactions</span>
+<span class="green-text">—</span>
+</div>
+</div>
+</section>
+<section class="card-panel">
+<div class="panel-header">
+<h3>Expenses by Category</h3>
+<select class="filter-select small-select" id="chartPeriod">
+<option value="this-month">This Month</option>
+<option value="last-month">Last Month</option>
+<option value="last-3-months">Last 3 Months</option>
+<option value="year">This Year</option>
+</select>
+</div>
+<div class="chart-container">
+<div class="y-axis" id="chartAxis"></div>
+<div class="chart-bars" id="categoryChart"></div>
+</div>
+</section>
+<section class="card-panel">
+<div class="panel-header">
+<h3>Expense History</h3>
+<button class="btn-outline small-btn" id="historyExport" type="button">📥 Export</button>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Category</th>
+<th>Description</th>
+<th>Amount</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="expenseTableBody"></tbody>
+</table>
+</div>
+<div class="pagination-row">
+<span id="paginationInfo">Showing 0 entries</span>
+<div class="pg-btns" id="paginationButtons"></div>
+</div>
+</section>
+<section class="export-banner">
+<div class="banner-info">
+<span class="banner-icon">📄</span>
+<div>
+<h3>Export Your Report</h3>
+<p>Download your expense report in PDF or CSV format.</p>
+</div>
+</div>
+<div class="banner-actions">
+<button class="btn-outline" id="downloadPdf" type="button">Download PDF</button>
+<button class="btn-outline" id="downloadCsv" type="button">Download CSV</button>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-brand">
+<div class="footer-logo"></div>
+<div>
+<h3>Pay<span>Nest</span></h3>
+<p>Smart. Spend. Bright Future.</p>
+</div>
+</div>
+<div class="footer-links">
+<div>
+<h4>Quick Links</h4>
+<a href="home.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="expenses.html">Expenses</a>
+</div>
+<div>
+<h4>More</h4>
+<a href="budget.html">Budget</a>
+<a href="savings.html">Savings</a>
+<a href="about.html">About Us</a>
+</div>
+<div>
+<h4>Support</h4>
+<a href="contact.html">Contact Us</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms &amp; Conditions</a>
+</div>
+</div>
+<div class="footer-bottom">
             © 2026 PayNest. All rights reserved.
         </div>
-
-    </footer>
-
-    <script src="../javascript/script.js"></script>
-
+</footer>
+<script src="../javascript/expenses.js"></script>
+<script src="../javascript/common.js"></script>
+<div aria-hidden="true" class="expense-modal" id="expenseModal">
+<div aria-labelledby="expenseModalTitle" aria-modal="true" class="expense-dialog" role="dialog">
+<div class="expense-modal-head"><h2 id="expenseModalTitle">Add Expense</h2><button aria-label="Close" class="close-modal" id="closeExpenseModal" type="button">×</button></div>
+<form id="expenseForm">
+<label for="expenseAmount">Amount (₹)</label><input id="expenseAmount" min="0.01" placeholder="Enter amount" required="" step="0.01" type="number"/>
+<label for="expenseCategory">Category</label><select id="expenseCategory" required=""><option value="">Select category</option><option value="Food &amp; Dining">🍔 Food &amp; Dining</option><option value="Travel &amp; Transport">🚘 Travel &amp; Transport</option><option value="Shopping">🛍️ Shopping</option><option value="Bills &amp; Utilities">📄 Bills &amp; Utilities</option><option value="Education">📚 Education</option><option value="Entertainment">🎬 Entertainment</option><option value="Others">📦 Others</option></select>
+<label for="expenseDescription">Description</label><input id="expenseDescription" maxlength="100" placeholder="What did you spend on?" required="" type="text"/>
+<label for="expenseDate">Date</label><input id="expenseDate" required="" type="date"/>
+<div class="expense-modal-actions"><button class="cancel-expense" id="cancelExpense" type="button">Cancel</button><button class="save-expense" id="saveExpense" type="submit">Save Expense</button></div>
+</form>
+</div>
+</div>
 </body>
 </html>
