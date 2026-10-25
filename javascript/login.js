@@ -43,7 +43,6 @@ function loginUser() {
         return false;
     }
 
-    // CAPTCHA verification
     if (enteredCaptcha.toUpperCase() !== captcha) {
         alert("Incorrect CAPTCHA. Please try again.");
         refreshCaptcha();

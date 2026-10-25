@@ -3,9 +3,7 @@
 // =====================================
 
 
-// =====================================
-// 1. PROMISE FUNCTION - SAVE MESSAGE
-// =====================================
+
 
 function saveContactMessage(contactMessage) {
 
